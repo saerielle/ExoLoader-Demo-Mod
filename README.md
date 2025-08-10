@@ -54,4 +54,5 @@ If you are interested in how any specific thing can be implemented using ExoLoad
 - Placeholder's art made via [Yomo Doll Maker](https://picrew.me/en/image_maker/2139284)
 - Sample's art made via [ようふくだんすβ](https://picrew.me/en/image_maker/2460239)
 
-
+# Download
+Installationg instructions and download link on [Releases tab](https://github.com/saerielle/ExoLoader-Demo-Mod/releases)
