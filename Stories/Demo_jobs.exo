@@ -1,0 +1,286 @@
+/******************************************************************************** }*/
+/** Visiting Template - Job ***********************************************************/
+/******************************************************************************** {*/
+
+=== visitTemplateStart ==============================================
+	~if job = high_visitTemplate
+
+	~set bg = quarters
+	~set midleft = demotemplate
+	~setif !mem_templateVisited ? mem_templateVisited = 1 : mem_templateVisited++
+	
+	Template stares at you. "Hello [Name], I'm here to tell you that I'm in your walls."
+
+	* Yay!
+		> continue
+
+	* You're weird
+
+		"I guess that was weird."	
+
+	=continue
+		You don't know what that meant, but you suppose you're happy to know _something_ worked as intended.
+
+
+=== visitTemplate1 ==============================================
+	~if job = visitTemplate
+	~set midleft = demotemplate
+	~set mem_templateVisited++
+
+	"This is the first event", Template nods.
+
+
+=== visitTemplate2 ==============================================
+	~if job = visitTemplate
+	~set midleft = demotemplate
+	~set mem_templateVisited++
+
+	"This is the second event", Template says.
+
+
+=== visitTemplate3 ==============================================
+	~if job = visitTemplate
+	~set midleft = demotemplate
+	~set mem_templateVisited++
+
+	"This is the third event", Template says.
+
+
+=== visitTemplate4 ==============================================
+	~if job = visitTemplate
+	~set midleft = demotemplate
+	~set mem_templateVisited++
+
+	Template just stares at you without saying nothing.
+
+	You are used to it.
+
+	* "It's the fourth event"
+
+		"Correct," they answer.
+
+		** "Are we going to do anything?"
+			~call battle(reasoning_easy)
+
+		**= win
+			"You have won," Template walks away.
+
+		**= lose
+			"You have lost," Template walks away.
+
+	* "Good talk"
+
+		Template walks away.
+
+
+=== visitTemplateUltimate ==============================================
+	~if job = high_visitTemplate
+	~if mem_work_visitTemplate >= 10
+	~if !mem_ultimate_visitTemplate
+	~if repeat_season = 2
+	~if mem_newShip
+	~set midleft = demotemplate
+	~set mem_templateVisited++
+	
+	Template stares at you. They say nothing.
+
+	But somehow you know that this is _the_ day.
+	
+	* Stare back vigorously
+		~call battle(reasoning_hard)
+	
+	*= win
+		
+		Template nods.
+		
+		-
+		~set mem_ultimate_visitTemplate
+		~set card = ultimate_visitTemplate
+		~set skill_kudos + 20
+		
+		"You did it."
+		
+	*= lose
+	
+		Template walks away.
+
+		Oh well... maybe it was just your imagination.
+		
+
+
+=== visitTemplateRepeat ==============================================
+	~if job = low_visitTemplate
+	~if repeat
+    
+	// 3/4 chance of regular event, 1/4 chance of seeing demotemplate
+	~setif random = 3 ? var_encounter = false : var_encounter = true
+	~setif var_encounter ? midleft = demotemplate
+
+	[if var_encounter]
+	
+		[if random]
+			Template stares at you. They say nothing.
+		[else]
+			Template stares at you. They say nothing.
+		[else]
+			Template stares at you. They say nothing.
+		[else if season == glow]
+			Template is in a good mood today - it's their favourite month.
+		[else if season == quiet]
+			Template is in a good mood today, probably because it's hard for guards to spot them standing right outside of the gates on the snow.
+
+			Template stares at you. They say nothing.
+		[end]
+	
+	[else]
+    
+		[if random]
+			No template today, it's ok, they usually say nothing.
+
+		[else if season == glow]
+			It's Template's favourite season.
+
+		[else if call_dating]
+			
+			[if mem_date_sym]
+				You wonder if Template knows Sym. You think so...
+			[else if mem_date_dys && mem_dysLeft]
+				You wonder if Dys would've joined you today to visit Template.
+			[else]
+				[if random!]
+					You spend a whole day chatting with [=call_whodate()] on your holopalm, because Template is not around.
+					
+				[else if mem_date_dys]
+					Dys comes by. He just stares at you and doesn't say anything. It's almost as if _he_ was Template.
+			
+				[end]
+		
+			[end]
+			
+		[end]
+		
+	[end]
+
+
+
+/******************************************************************************** }*/
+/** Stress Testing - Job ***********************************************************/
+/******************************************************************************** {*/
+
+=== relaxStressTestingStart ==============================================
+	~if job = high_relaxStressTesting
+
+	~set bg = engineering
+	~set left = demohold
+	~set right = demosam
+
+	"Player! You've found this place!" Sam jumps up to you.
+
+	* "What place?"
+		~set speaker = demohold
+
+		"[todo: Hold explaining [Name] what's the place is]" He looks at you with a blank expression on his face.
+
+		-
+		~set right = demosam_happy
+		"That's right!" Sam exclaims, but seeing your own blank expression starts explaining. "I always forget that you actually do not understand Hold when he speaks like that."
+
+		-
+		"It's a stress testing activity! You test things and then your stress is just... pooof! Gone!"
+		
+		[if mem_sam_he]He[else]She[end] holds some sort of a device to you. "Here, test this!"
+
+		** "Ok..."
+			~call battle(perception_easy)
+
+		**= win
+			Sam observes your movement with enthusiasm.
+			
+			"Nice, you feeling better already?"
+
+		**= lose
+			"Ooow... It's alright!" Sam pats your shoulder. "You'll still get all your stress cleared!"
+
+	* "I came here by a mistake"
+		~set right = demosam_angry
+
+		"Too late!" [if mem_sam_he]He[else]She[end] throws you some sort of a device. "Here, test this!"
+
+		** Throw it back
+			Just now you were so annoyed at Sam, but now you feel... relaxed?
+
+
+
+
+=== relaxStressTestingRepeat ==============================================
+	~if job = low_relaxStressTesting
+	~if repeat
+    
+	// 3/4 chance of regular event, 1/4 chance of seeing demosam
+	~setif random = 3 ? var_encounter = false : var_encounter = true
+	~setif var_encounter ? midleft = demosam
+
+	[if var_encounter]
+	
+		[if random]
+			"Hi! Let us stress test something!" Sam jumps up from where [if mem_sam_he]he[else]she[end] was sitting.
+		[else]
+			"This is random, what I'll say here, you know?"
+		[else]
+			"This is also soooo random!"
+		[else]
+			"Very random, but I'm here today!"
+		[else]
+			"Did you know that usually it's 1/4 chance of seeing character-related mini-events on the 'repeat' job stories?"
+		[else]
+			"It's true! I've tested it!!"
+		[end]
+	
+	[else]
+    
+		[if random]
+			Very random event.
+		[else if age < 15]
+			Very random event, happens before 15 years old.
+		[else if age < 15]
+			Another very random event that happens before 15 years old.
+		[else if season == pollen]
+			Stress testing during Pollen!
+		[else if season == wet]
+			Stress testing during Wet!
+		[else if season == dust]
+			Stress testing during Dust!
+		[else if season == glow]
+			Stress testing during Glooooow~
+		[else if season == quiet]
+			Stress testing during Quiet!
+		[else if !mem_dead_dad]
+			Good thing the dad is not dead <3
+		[else if call_dating]
+			
+			[if mem_date_sym]
+				Yep, you're dating Sym.
+			[else if mem_date_dys && mem_dysLeft]
+				Oh no, you are dating Dys, but he's not in the colony right now. You wonder if he'd join you for this stress testing session.
+			[else]
+				[if random]
+					You are thinking about [=call_whodate()] during this month's stress testing. Thinking of [=call_whodate()] brings you joy!
+				[else if mem_date_tang]
+					Tang is good at stress testing.
+				[else if mem_date_marz]
+					Marz does not like stress testing, but she tolerates you doing it.
+				[else if mem_date_tammy]
+					Tammy often brings you snacks during stress testing.
+				[else if mem_date_rex]
+					Rex comes over often and joins you for your special _stress testing_.
+				[else if mem_date_nomi]
+					Nomi is the best stress tester this colony has!
+				[end]
+		
+			[end]
+			
+		[end]
+		
+	[end]
+
+

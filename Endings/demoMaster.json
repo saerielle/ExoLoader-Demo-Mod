@@ -1,0 +1,17 @@
+{
+  "ID": "demoMaster",
+  "Name": "Master of Templates",
+  "Preamble": "You reached your 20th birthday...",
+  "Location": "engineering",
+  "Character": "",
+  "RequiredJobs": [
+    "visitTemplate"
+  ],
+  "OtherJobs": [
+    "relaxStressTesting"
+  ],
+  "RequiredMemories": [],
+  "Skills": [
+    "perception"
+  ]
+}

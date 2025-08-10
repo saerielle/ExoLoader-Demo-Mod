@@ -1,0 +1,24 @@
+{
+  "ID": "templater",
+  "Name": "Templater",
+  "Plural": "Templaters",
+  "HowGet": "none",
+  "Like": "sym, demotemplate, demosam, demohold",
+  "Dislike": "marz, vace",
+  "ArtistName": "Poayo_",
+  "Ability1": {
+    "ID": "collectiblePlusSuit",
+    "Value": "1",
+    "Suit": "wildcard"
+  },
+  "Ability2": {
+    "ID": "",
+    "Value": "0",
+    "Suit": "none"
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "0",
+    "Suit": "none"
+  }
+}

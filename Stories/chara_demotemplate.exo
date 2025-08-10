@@ -1,0 +1,109 @@
+/******************************************************************************** }*/
+/** Template - High Priority ***********************************************************/
+/******************************************************************************** {*/
+
+=== demotemplateRebuilding ==============================================
+	~if chara = _high_demotemplate
+	~if mem_rebuilding
+	~if repeat
+
+	~set bg = destroyed
+	~set left = demotemplate
+
+	Template stares at you. "The colony is destroyed", they say.
+
+
+=== demotemplateMourning ==============================================
+	~if chara = _high_demotemplate
+	// block any happier events while you're in mourning for something not caught above
+	~if status = mourning
+	~if repeat
+	
+	Template stares at you. "Someone you loved died", they say.
+
+
+=== demotemplateIntro ==============================================
+	~if chara = high_demotemplate
+	
+	~set midleft = demotemplate
+	
+	Template stares at you. "Hmm... I don't really understand this. You celebrate the day you were born cyclically based on the position of the planet in relation to the sun?"
+
+	Template seems deep in thought for a few seconds, then shrugs.
+
+	"I suppose there is no harm in it. Happy birthday."
+
+	* Thanks!
+		> continue
+
+	* You're weird
+		~set bg = orange_glow
+		~set midleft = demotemplate_angry
+		~set card = demotemplate1
+		
+		"Yes, and no." You don't think they're very good at making conversation.
+		
+		-
+		
+		~set midleft = demotemplate_sad
+
+		"I am now sad."
+
+		-
+
+		~set midleft = demotemplate_happy
+
+		"This was a joke, I am laughing."
+
+		-
+		"And this background was supposed to be 'Orange Glow', but we've run out of budget."
+
+		> continue
+
+	*= continue
+		~call charafact(demotemplate, more)
+		You don't know when they got there, but for some reason you don't have it in yourself to question it.
+
+		And you also now see more information about them in their character panel, huh?
+		
+
+
+
+
+/******************************************************************************** }*/
+/** Template - Low Priority ***********************************************************/
+/******************************************************************************** {*/
+
+=== demotemplateRepeat ==============================================
+	~if chara = low_demotemplate
+	~if repeat
+
+	Template stares at you. They say nothing.
+
+	* Do you want this?
+		~if mem_foundCollectible
+		~ifd call_canGift(demotemplate)
+		~call preventSeenSkip
+		~call chooseGift(demotemplate)
+		
+		**= card_default
+			"Thanks", they say.
+			
+	* Done
+	
+
+
+
+/******************************************************************************** }*/
+/** Template ***********************************************************/
+/******************************************************************************** {*/
+
+=== demotemplate1Friendship ==============================================
+	~if chara = demotemplate
+	~set mem_templateVisited++
+
+	Template stares at you. "You're [Name]", they say.
+	
+	* Ok.
+
+

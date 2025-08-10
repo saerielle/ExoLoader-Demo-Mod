@@ -1,0 +1,1492 @@
+/******************************************************************************** }*/
+/** Sam ***********************************************************/
+/******************************************************************************** {*/
+
+=== demosam1Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 10
+	~set midleft = demosam
+
+	As you were going your way, you get ambushed by a [if mem_sam_he]boy[else]girl[end], who looks stragely familiar.
+
+	"Player!! How's the game going? [if hog_dead_tammy]Did you save Tammy already?[else]Getting any odd dreams lately?[end]"
+
+	-
+	~set card = demosam1
+
+	Ah, it looks like it's Sam, who else would call you a _player_.
+
+	* "Sam? You look different..."
+		> different
+
+	* "Who are you and what have you done to Sam?"
+		> different
+
+	* Just leave
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Yeah, you don't have time for whatever noncence Sam is up to today.
+
+	*= different
+		~call charafact(demosam, enhancement)
+
+		Sam looks over [if mem_sam_he]himself[else]herself[end] and smiles. "Ah, you've noticed! Magic of my genetic augment!"
+
+		[if mem_sam_he]He[else]She[end] leans closer to you and whispers. "I am _meta aware_. But not in the way you are with your power to change the _plot_ however you wish. I can only change myself. Observe!"
+
+		** "Huh?"
+			> observe
+		
+		** "Oh!"
+			> observe
+
+	*= observe
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		~set speaker = demosam
+		// ~set midleft = demosam_happy
+
+		"You like this?" Sam spins around, gigling.
+
+		-
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		~set speaker = demosam
+		// ~set midleft = demosam
+
+		"How about this?" Sam spins around again.
+
+		-
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		~set speaker = demosam
+		// ~set midleft = demosam_happy
+
+		"Or this?" Sam spins around yet again.
+
+		-
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		~set speaker = demosam
+		// ~set midleft = demosam_angry
+
+		Sam transforms once again and stops spinning. "Or... Wait, what gender was I when we met today?"
+
+		-
+		"All this spinning made me feel dizzy... Can we talk some other time?" [if mem_sam_he]He[else]She[end] doesn't wait for your response and disapears.
+
+		-
+		~set midleft = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		And just like that, [if !mem_sam_he]He[else]She[end] is gone.
+
+
+=== demosam2Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 20
+	~set midleft = demosam
+
+	Sam waves enthusiastically as you approach. "Player! Perfect timing! I've been working on something special for you."
+
+	[if mem_sam_he]He[else]She[end] reaches into [if mem_sam_he]his[else]her[end] pocket and pulls out a delicate white flower.
+
+	-
+	~set card = whiteFlower
+
+	"Ta-da! One white astrantia, freshly gathered from my secret stash of rare collectibles!"
+
+	* "It's beautiful!"
+		~set love_demosam++
+		~set midleft = demosam_happy
+
+		"Isn't it? I had to do some serious data mining to find where these spawn. The devs really hid them well!"
+
+		[if age < 12]
+			You've never seen a flower quite like this before. It's so perfectly white and delicate.
+		[else]
+			Wait... this flower looks familiar. You're pretty sure you've seen these growing in your mother's garden.
+		[end]
+
+		> continue
+
+	* "Where did you get this?"
+		Sam grins mischievously. "Trade secret! Let's just say I may have found a way to access some... restricted asset folders."
+
+		[if age < 12]
+			You take the strange flower, admiring its star-shaped petals. You've never seen anything like it.
+		[else]
+			Wait... this flower looks familiar. This looks exactly like the ones from your mother's garden.
+		[end]
+
+		> continue
+
+	*= continue
+		~set midleft = demosam
+
+		"Consider it a friendship token! Plus, I wanted to test the gifting system mechanics."
+
+		When you look at [if mem_sam_he]him[else]her[end] curiously, Sam explains, "You know, how you can go around gifting people items? I wanted to see if it works in reverse!"
+
+		[if mem_sam_he]He[else]She[end] winks. "Gotta min-max these social interactions, you know?"
+
+		-
+		~set midleft = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Sam waves goodbye and heads off, probably to _test_ something else.
+		
+
+
+=== demosam3Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 30
+	~set midleft = demosam
+
+	[if first]
+		Sam looks particularly excited today. "Player! Want to see something really cool? I've been experimenting with visual effects!"
+	[else]
+		"You've returned to checkout visual effects!" Sam smiles with excitement.
+	[end]
+
+	* "Sure!"
+		> effects
+
+	* "Should I be worried?"
+		> effects
+
+	* "Not today."
+		~call keep
+
+		Maybe you'll return later to see these _effects_.
+
+	*= effects
+		~set midleft = demosam_happy
+
+		"Great! Let me demonstrate the holopalm effect first..."
+
+		-
+		~set effect = holopalm
+
+		"See? It's like you're getting a call! Pretty neat interface overlay, right?"
+
+		-
+		~set effect = none
+
+		"And now for something more dramatic!" Sam jumps up and down excitedly.
+
+		-
+		~set effect = screenshake
+
+		"Earthquake mode! Or like if someone bumped into you! Very useful for action sequences!"
+
+		-
+		~set effect = dream
+
+		"Ooh, dreamy! This one's for flashbacks and visions. Makes everything feel all mystical and stuff."
+
+		-
+		~set effect = fadeToBlack
+		~set bg = colony
+		~set midleft = demosam
+
+		"Smooth transitions! Very cinematic. The background change happened so seamlessly you barely noticed, right?"
+
+		-
+		~set effect = fire
+		~set midleft = demosam_angry
+
+		"This one..." Sam's expression darkens. "I don't like this one. It makes me think of bad endings."
+
+		-
+		~set effect = night
+		~set midleft = demosam
+
+		"Much better! Nighttime mode. Very atmospheric for romantic scenes, I hear."
+
+		-
+		~set effect = silence
+
+		"Can you hear that? That's the sound of silence! All ambient audio cut out. Dramatic pause effect!"
+
+		-
+		~set effect = fadeSexy
+		~set bg = walls
+		~set midleft = demosam
+
+		"Oops! To young for this, next-next-next!" Sam fumbles with [if mem_sam_he]his[else]her[end] holopalm.
+
+		-
+		~set effect = festival
+
+		"Oof, much better... This is for Vertumnalia, I think." Sam sighs in relief. "Moving on!"
+
+		-
+		~set effect = heathaze
+		~set midleft = demosam_angry
+
+		"Hot hot hot! Desert vibes! Makes you want to reach for a cool drink, doesn't it?"
+
+		-
+		~set effect = pollen
+		~set midleft = demosam
+
+		"Ah, pollen season simulation! Achoo! Well, not really, but it looks like it should make you sneeze."
+
+		-
+		~set effect = dim
+		~set midleft = demosam
+
+		"And this is... dimmer? I think? There are honestly so many effects I'm starting to lose track..."
+
+		Sam slumps slightly. "Ugh, I'm getting tired from all this demonstration. The visual system is way more complex than I initially debugged."
+
+		** "That was amazing!"
+			~set effect = none
+			~set midleft = demosam_happy
+			~set love_demosam++
+
+			"Right?! The developers really went all out with the immersive options. I bet there are even more I haven't discovered yet!"
+
+			> gone
+
+		** "You seem to know a lot about this stuff."
+			~set effect = none
+			~set love_demosam++
+
+			"What can I say? When you're beta testing reality, you pick up a few tricks about the underlying systems."
+
+			> gone
+
+	*= gone
+		Sam stretches and yawns. "I think that's enough experimentation for one day. See you later, Player!"
+
+		-
+		~set midleft = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		And as usual, Sam is gone.
+		
+
+
+
+=== demosam4Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 40
+	~set midleft = demosam
+
+	You find Sam staring intently at a holoscreen, muttering to [if mem_sam_he]himself[else]herself[end].
+
+	"Hmm, if I adjust the randomization algorithm here... and tweak the memory flag here..."
+
+	-
+
+	[if mem_sam_he]He[else]She[end] notices you approaching and quickly minimizes whatever [if mem_sam_he]he[else]she[end] was working on.
+
+	"Oh! Player! You caught me working on a little side project."
+
+	* "What kind of project?"
+		> project
+
+	* "Are you hacking something?"
+		> project
+
+	*= project
+		~set midleft = demosam_happy
+
+		"I'm trying to optimize conversation trees! You know how sometimes people say things that don't quite fit the situation? I'm working on a patch!"
+
+		Sam opens the holoscreen again, showing what looks like a complex flowchart.
+
+		"See, if I can predict what responses will increase friendship values most efficiently, I can help everyone communicate better! It's like... social debugging!"
+
+		** "That's... actually kind of thoughtful."
+			~set midleft = demosam
+			~set love_demosam++
+
+			"Right? I mean, sure, it removes some of the organic randomness of human interaction, but think of how much more efficient relationships could be!"
+
+			Sam pauses. "Though... I guess that might make things kind of boring. Maybe some bugs are actually features?"
+
+			>> continue
+
+		** "Isn't that kind of manipulative?"
+			~set midleft = demosam_angry
+
+			"Manipulative? No no no! I'm not changing what people think or feel - I'm just optimizing the delivery system!"
+
+			Sam looks genuinely concerned. "Although... when you put it that way, maybe I should add..."
+
+			>> continue
+
+	*= continue
+		~set midleft = demosam
+		~set card = demosam2
+
+		Sam saves [if mem_sam_he]his[else]her[end] work and closes the holoscreen. 
+
+		"Sorry, sometimes I get so caught up in the code that I forget about the human element. On that note... I have something funny to show you!"
+
+		** "What?"
+			~set mem_flirt_demosam
+
+			> funny
+
+		** "Is it another one of your 'jokes'?"
+			~set mem_flirt_demosam
+
+			> funny
+
+		** "I don't want anything to do with this"
+			~set mem_flirt_demosam
+
+			> funny
+
+		** "Why are all options shown as flirting?!"
+			~set mem_flirt_demosam
+
+			> funny
+
+	*= funny
+		~set midleft = demosam_happy
+		~call charafact(demosam, more)
+		
+		You do not know why - you haven't said anything special - but Sam blushes and hides [if mem_sam_he]his[else]her[end] face behind [if mem_sam_he]his[else]her[end] hands.
+		
+		"Oh, look at the time! Gotta go! Bye, [Name]!" 
+
+		-
+		~set midleft = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Did [if !mem_sam_he]he[else]she[end] just call you by your name? That's a first.
+		
+
+
+=== demosam5Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 50
+	~set charas = none
+
+	For the past few months Sam has been avoiding you. Or running away from you whenever [if mem_sam_he]he[else]she[end] sees you.
+
+	But not today! You notice [if mem_sam_he]him[else]her[end] sitting on the colony walls deep in thought.
+
+	* Approach [if mem_sam_he]him[else]her[end] quietly
+		~ifd skill_perception >= 30
+
+		> success
+
+	* Approach [if mem_sam_he]him[else]her[end] quickly
+		~ifd skill_toughness >= 30
+
+		> success
+
+	* Be creative
+		~ifd skill_creativity >= 30
+
+		> success
+
+	* Eh, just leave [if mem_sam_he]him[else]her[end] be
+		~set midleft = demosam_angry
+
+		Sam notices you, but before running away [if mem_sam_he]he[else]she[end] shouts "DEBUG BONDING!".
+
+		-
+		~set love_demosam = 100
+		~set love_demohold = 100
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		You are not sure what just happened. You're left with more questions than answers yet again.
+
+
+	*= success
+		~set bg = walls
+		~set midleft = demosam_angry
+
+		"Oh, hi pl- [Name]." Sam greets as [if mem_sam_he]he[else]she[end] gets up, clearly intending to leave.
+
+		"Listen, I don't want to talk about what happened, so I'll just enable _debug bonding_ again, ok?"
+
+		** "What?"
+			~set love_demosam = 100
+			~set love_demohold = 100
+
+			"Just like the last time," Sam explains. "We can discuss you unintentionally flirting with me some other time, I am really not in the mood today".
+
+			-
+			~set charas = none
+			~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+			And once again [if !mem_sam_he]he[else]she[end] is gone before properly finishing the conversation.
+			
+
+
+=== demosam6Friendship ==============================================
+	~if chara = demosam
+	~if mem_newShip
+	~if age >= 15 // Sam is around 17, Hold is around 18
+	~if love_demosam >= 60
+
+	~set midleft = demosam
+	~set right = demohold
+
+	You spot Sam and Hold having what appears to be a very one-sided conversation. Sam seems animated while Hold stands there with his usual blank expression.
+
+	-
+	~set speaker = demohold
+
+	"What are you doing?" Hold asks sheepishly.
+
+	-
+	~set speaker = demosam
+
+	"Nothing illegal... hopefully." Sam replies with a smile.
+
+	-
+	~set speaker = demohold
+
+	Hold stares down at [if mem_sam_he]him[else]her[end]. "You've been staring at me for five minutes."
+
+	-
+	~set speaker = demosam
+
+	Sam fidgets nervously. "It's for science! I think!"
+
+	You're not sure what's going on here, but it seems like Sam is up to something experimental again.
+
+	* "Sam? What's going on?"
+		> intervene
+
+	* Leave them be and walk away
+		~set mem_custom_demosam_demohold_relationship = true
+		// Because player decided not to observe, their relationship in the character tabs will be shown as just "Dating" without anything special
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		You decide this is probably better left alone. Whatever Sam is testing, Hold seems to be handling it with his usual stoic indifference.
+
+		You quietly back away before either of them notices you were watching.
+
+	*= intervene
+		~set speaker = demosam
+		~set midleft = demosam_happy
+
+		"[Name]! Perfect timing! I'm conducting a controlled experiment on Hold's dialogue tree!"
+
+		Now it's your turn to just stare at [if mem_sam_he]him[else]her[end].
+
+		"Yeah! I'm testing his different conversation branches. Watch this!"
+
+		-
+		Sam turns back to Hold with scientific determination.
+
+		"Hold, if I were to say something like... 'I think you're really interesting and I'd like to spend more time with you'-"
+
+		-
+		~set effect = screenshake
+		~set mem_custom_demosam_demohold_relationship = Test dating {chara}|Unintentionally dating {chara}
+		// First part before pipe will be shown in Sam's profile, second part in Hold's profile
+
+		_SYSTEM ALERT: ROMANCE FLAG TRIGGERED_
+
+		-
+		~set speaker = demosam
+		~set midleft = demosam_angry
+
+		"Wait, what?! That wasn't supposed to- I was just testing the branching logic!"
+
+		-
+		~set speaker = demohold
+
+		"[todo: resist. deny feelings. or don't]"
+
+		Hold pauses, looking confused by his own words. "Did I just... why did I say that?"
+
+		-
+		~set speaker = demosam
+
+		Sam starts frantically gesturing at an invisible interface. "No no no, how do I undo this? Where's the reload function?!"
+
+		** "Save scumming is my privilege"
+			Sam leans closer to you. "Could you please... you know... reload?"
+
+			*** "No"
+				~set midleft = demosam_angry
+
+				"B-but..." Sam looks back at Hold, who seems to be still processing his own emotions regarding the situation. "I guess, he's nice... And lets me test things..."
+
+				-
+				~set charas = none
+				~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+				Sam takes Hold's hand and they leave, and you are left wondering if that's how all relationships start in Sam's world - with debugging and system alerts.
+
+			*** "Ok"
+				~set charas = none
+				~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+				You leave them be and go on with your own business. Maybe you will reload, maybe not. It's not like you own it to anyone.
+
+		** "Maybe just... go with it?"
+			~set speaker = demosam
+			~set midleft = demosam
+
+			"Go with it? But this wasn't a planned test case! The variables are all wrong!"
+
+			-
+			~set speaker = demohold
+
+			"Mmm...." [todo: complex reaction from Placeholder]
+
+			-
+			~set speaker = demosam
+
+			Sam looks between you and Hold, flustered. "I guess... I mean... error handling is part of good beta testing, right?"
+
+			[if mem_sam_he]He[else]She[end] takes Hold's hand and smiles.
+
+			*** Leave
+				> ending
+
+		** "Can't you just reset it somehow?"
+			~set speaker = demosam
+
+			"Oh! Yeah, maybe... Would you come back later? My next friendship event, ok?"
+
+			-
+			[todo: complex reaction from Placeholder, he doesn't want to reset it, not yet]
+
+			-
+			~set midleft = demosam_happy
+
+			Sam stops panicking for a moment. "Huh. That's... actually a really good question, Hold." [if mem_sam_he]He[else]She[end] takes Hold's hand and smiles.
+
+			*** Leave
+				> ending
+
+	*= ending
+		~set charas = none
+
+		You leave Sam and Hold to figure out their accidental romantic subplot, wondering if this is how all relationships start in Sam's world - with debugging and system alerts.
+
+		-
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		As you walk away, you can still hear Sam muttering about _unintended feature interactions_ and Hold responding with various _[todo: emotional response]_ statements.
+
+		
+
+
+
+=== demosam7Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 70
+	~if mem_custom_demosam_demohold_relationship
+	~if month > 16-dust-1
+	~set midleft = demosam
+	
+	Sam approaches you with an unusually serious expression. "Hey, [Name]. Remember that... situation with Hold and the romance flag?"
+	
+	[if mem_sam_he]He[else]She[end] runs a hand through [if mem_sam_he]his[else]her[end] hair. "Well, it's been a few weeks now, and I'm not sure what to do about it."
+
+	* "How are things going with you two?"
+		~set love_demosam++
+		> status
+
+	* "Still want to reset it?"
+		> status
+
+	*= status
+		~set midleft = demosam_happy
+
+		"That's the thing - it's actually been... nice? Hold's really sweet once you get past all the placeholder text. But I keep feeling like I'm living in someone else's story, you know?"
+
+		Sam looks thoughtful. "Plus, I can't shake the feeling that this whole thing is supposed to involve you somehow. The narrative structure just feels _incomplete_."
+
+		** "What do you mean?"
+			> options
+
+		** "You're overthinking this"
+			~set midleft = demosam
+
+			"Maybe. But when you can see the code behind relationships, it's hard not to notice when something seems... unfinished."
+
+			> options
+
+	*= options
+		~set right = demohold
+
+		Hold appears as if summoned by the conversation. "[todo: overhear discussion about self]"
+
+		He pauses, then speaks normally. "Are you... talking about me?"
+
+		-
+		~set midleft = demosam
+
+		"Hold! Perfect timing. We were just discussing our... relationship status." Sam smiles awkwardly.
+
+		-
+		~set speaker = demohold
+
+		Hold looks between you and Sam. "I've been experiencing many undefined emotions lately."
+
+		-
+		~set speaker = demosam
+
+		Sam turns to you. "See? This is what I mean. I think we need a third party to help us figure this out. What do you think we should do?"
+
+		** "You two seem happy together. Keep things as they are"
+			~set midleft = demosam_happy
+
+			"Really? You think so?" Sam looks relieved. "I guess sometimes the best bugs become features."
+
+			-
+			~set mem_custom_demosam_demohold_relationship = true
+			~set right = demohold_happy
+
+			"[todo: express contentment]" Hold pauses. "I am... satisfied with this outcome."
+
+			> ending_together
+
+		** "Maybe I could join you? If you're both interested..."
+			~if mem_relationship != monogamous
+			~set mem_custom_demosam_demohold_relationship = true // We just set it to default state for the character panels
+			~set mem_flirt_demosam
+			~set mem_date_demosam = true
+			~set mem_relationship = open
+			~set hog_love_demosam
+			~set midleft = demosam_happy
+
+			Sam's eyes light up. "Ooh! A polyamorous subplot! I've always wondered how those work mechanically!"
+
+			-
+			~set mem_flirt_demohold
+			~set mem_date_demohold = true
+			~set mem_relationship = open
+			~set hog_love_demohold
+			~set right = demohold_happy
+
+			"[todo: process unexpected relationship parameters]" Hold looks between you and Sam.
+
+			> ending_poly
+
+		** "I think you should break up. This started as an accident"
+			~set speaker = demosam
+			~set midleft = demosam_angry
+
+			"Break up? But... I mean, you're right that it started accidentally, but..."
+
+			-
+			~set right = demohold_angry
+
+			"[todo: resist breakup]. Wait. I don't want to reset."
+
+			-
+			~set speaker = demosam
+
+			Sam looks surprised. "You... don't?"
+
+			-
+			~set speaker = demohold
+
+			[todo: Hold explains that he likes spending time with Sam, even if it was started as a bug]
+
+			*** "Sorry, but bugs should be fixed"
+				~set mem_custom_demosam_demohold_relationship = false
+				~set midleft = demosam
+
+				Sam sighs. "I guess you're right. Back to the drawing board."
+
+				-
+				~set right = demohold
+
+				Hold nods sadly. "[todo: accept rejection gracefully]"
+
+				> ending_breakup
+
+			*** "Hold has a point. Maybe give it more time?"
+				~set midleft = demosam_happy
+
+				"You know what? Maybe some bugs are worth keeping." [if mem_sam_he]He[else]She[end] holds [if mem_sam_he]his[else]her[end] hand out to Hold. "Maybe there are some other features we can discover this way."
+
+				> ending_together
+
+		** "Break up with Hold. I want to date you instead"
+			~if mem_relationship != monogamous
+			~set midleft = demosam_happy
+			~set mem_flirt_demosam
+
+			"Oh! That's... actually really direct. I like that in a protagonist." Sam giggles nervously. "I mean, I guess I was hoping you'd say that, [Name]."
+
+			-
+			~set mem_custom_demosam_demohold_relationship = false
+			~set mem_date_demosam
+			~set hog_love_demosam
+			~set mem_relationship = open
+			~set speaker = demohold
+
+			"[todo: process romantic rejection, no hard feelings, somehow]" Hold looks down. "I understand."
+
+			> ending_player_sam
+
+		** "Break up with Hold. I want to date him instead"
+			~if mem_relationship != monogamous
+			~set midleft = demosam_angry
+			~set mem_flirt_demohold
+
+			"Ah. Well, that's... unexpected plot development." Sam tries to smile. "I guess I should have seen that coming."
+
+			-
+			~set right = demohold_happy
+			~set mem_custom_demosam_demohold_relationship = false
+			~set mem_date_demohold
+			~set hog_love_demohold
+			~set mem_relationship = open
+
+			"[todo: surprise at being chosen over Sam]"
+
+			> ending_player_hold
+
+	*= ending_together
+		~set speaker = demosam
+
+		"Thanks for helping us debug this, [Name]. Sometimes the best solutions are the ones you stumble into accidentally."
+
+		> final_exit
+
+	*= ending_poly
+		~set speaker = demosam
+
+		"This is going to be interesting to navigate! Thanks for being part of our experimental relationship structure."
+
+		Sam smiles at you both. "And that means you are still open to other relationships!"
+
+		> final_exit
+
+	*= ending_breakup
+		~set speaker = demosam
+
+		"Well, that's one way to resolve a plot thread. Thanks for the honesty, [Name]."
+
+		> final_exit
+
+	*= ending_player_sam
+		~set speaker = demosam
+
+		"I have to admit, I was hoping this might happen. Thanks for choosing me, [Name]."
+
+		> final_exit
+
+	*= ending_player_hold
+		~set speaker = demosam
+
+		"Take care of him, okay? He's got more depth than people realize."
+
+		> final_exit
+
+	*= final_exit
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		The three of you part ways, the relationship dynamics now properly resolved... for better or worse.
+		
+
+
+=== demosam8Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 80
+	~set midleft = demosam
+
+	Sam is sitting with a notebook, scribbling furiously. [if mem_sam_he]He[else]She[end] looks up as you approach.
+
+	"Oh hey! I've been tracking your decision patterns. Did you know you choose the middle option 34% more often when stressed?"
+
+	* "That's... oddly specific."
+		~set love_demosam++
+		~set skill_reasoning++
+
+		Sam grins. "I have a lot of free time between story events. Your behavioral data is fascinating from a player psychology perspective!"
+
+		-
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Sam just was here, but now [if !mem_sam_he]he[else]she[end] has vanished into thin air, leaving only a faint trace of [if !mem_sam_he]his[else]her[end] presence.
+
+	* "Stop analyzing me!"
+		~set love_demosam++
+		~set skill_toughness++
+
+		"But the data is so interesting! Fine, fine, I'll keep my observations to myself... mostly."
+
+		-
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Sam just was here, but now [if !mem_sam_he]he[else]she[end] has vanished into thin air, leaving only a faint trace of [if !mem_sam_he]his[else]her[end] presence.
+		
+
+
+=== demosam9Friendship ==============================================
+	~if chara = demosam
+	~if love_demosam >= 90
+	~set midleft = demosam
+
+	You find Sam staring intensely at [if mem_sam_he]his[else]her[end] hands. "I've been experimenting with minor reality adjustments. Watch this!"
+
+	-
+	~set effect = screenshake
+	Sam snaps [if mem_sam_he]his[else]her[end] fingers and... nothing visible happens.
+
+	"I just changed the probability that you'll find something good today. Subtle, but effective!"
+
+	* "Did that actually work?"
+		~set love_demosam++
+
+		"Check your pockets later and see!" Sam winks.
+
+		-
+		~set charas = none
+		~set card = wood
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Sam just was here, but now [if !mem_sam_he]he[else]she[end] has vanished into thin air, leaving only a faint trace of [if !mem_sam_he]his[else]her[end] presence.
+
+	* "That seems like cheating."
+		~set love_demosam++
+		~set skill_organization++
+
+		"It's not cheating if it's within my character permissions! Just... creative interpretation of my abilities." Sam winks.
+
+		-
+		~set charas = none
+		~set card = wood
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		Sam just was here, but now [if !mem_sam_he]he[else]she[end] has vanished into thin air, leaving only a faint trace of [if !mem_sam_he]his[else]her[end] presence.
+		
+
+
+=== demosam10Ultimate ==============================================
+	~if chara = demosam
+	~if love_demosam >= 100
+	~set midleft = demosam
+
+	Sam is standing in front of what appears to be a floating interface only [if mem_sam_he]he[else]she[end] can see, gesturing wildly.
+
+	"Finally! I've managed to access my character configuration panel! This is huge, [Name]!"
+
+	-
+	[if mem_sam_he]He[else]She[end] turns to you excitedly. "I can't change the major story beats, but I can finally customize my own parameters!"
+
+	* "What kind of parameters?"
+		> parameters
+
+	* "Is that safe?"
+		> parameters
+
+	*= parameters
+		~set midleft = demosam_happy
+
+		"Oh, all sorts of things! Before this I could only change my gender and appearance... now I can do some minor reality manipulation within my personal space!"
+
+		-
+		Sam starts typing in the air. "I'm setting up automated friendship maintenance, optimizing my conversation trees, and... ooh! I can finally fix that annoying gender swap timing issue!"
+
+		** "Sounds complicated."
+			"It is! But worth it. No more accidentally changing mid-conversation!"
+
+			> givecard
+
+		** "Don't break yourself."
+			"I've got backups! Probably... The documentation is a bit sparse." Sam shrugs.
+
+			> givecard
+
+		** "Oh, now you can change at the start...?"
+			~set skill_reasoning++
+
+			"No, you'd still need to swap my gender in code _after_ our conversation when I am not on the screen, if you want me in different gender in the next conversaion..."
+
+			Sam looks down at [if mem_sam_he]his[else]her[end] hands.
+
+			> givecard
+
+	*= givecard
+		~set card = demosam3
+
+		"Oh! And look at this - I can generate new test cards now!" Sam hands you a shimmering card that seems to shift colors.
+
+		"SAM'S TEST III - my masterpiece! It's got probability manipulation, wild card bonuses, everything! The achievement system even registered it!"
+
+		** "This is incredible!"
+			~set midleft = demosam_happy
+
+			"Right?! I'm basically a junior developer now! Well, for my own character at least."
+
+			> thanks
+
+		** "You're getting a bit too powerful."
+			~set midleft = demosam
+
+			"Don't worry, I can't affect anyone else's story arcs. Just my own little corner of the simulation."
+
+			> thanks
+
+	*= thanks
+		~set midleft = demosam_happy
+		Sam saves whatever [if mem_sam_he]he[else]she[end] was working on, as if there was actually an interface there.
+
+		"Thanks for being such a good friend throughout all my experiments, [Name]!"
+
+		-
+
+		"I promise to only use my new abilities for good... and maybe some harmless pranks. The usual beta testing stuff!"
+
+		** "I trust you... mostly."
+			~set skill_bravery++
+
+			"That's probably wise! I make no guarantees about my impulse control."
+
+		** "Just don't break reality."
+			~set skill_empathy++
+
+			"No promises! But I'll try to keep the paradoxes to a minimum."
+
+
+
+
+/******************************************************************************** }*/
+/** Sam - Low Priority ***********************************************************/
+/******************************************************************************** {*/
+
+=== demosamRepeat ==============================================
+	~if chara = low_demosam
+	~if repeat
+
+	"Heya!" // Sam does not have random texts, because otherwise I would never finish the demo mod
+	
+	* "Do you want this?"
+		~if mem_foundCollectible
+		~ifd call_canGift(demosam)
+		~call preventSeenSkip
+		~call chooseGift(demosam)
+		
+		**= card_whiteFlower
+			"Oh! You found another white astrantia? That's... actually really sweet. It reminds me of when I first figured out the gifting system with you."
+			
+			[if call_charaBirthday(demosam)]
+				"And on my birthday too! This is so cool! Thanks, [Name]."
+			[else]
+				"I'll add this to my collection. Thanks!"
+			[end]
+
+		**= card_wood
+			~setif !mem_sam_wood ? mem_sam_wood = 1 : mem_sam_wood++
+			~setif mem_sam_wood >= 3 ? card = templater
+			~setif mem_sam_wood >= 3 ? var_tell_wood = true
+			~setif mem_sam_wood >= 3 ? mem_sam_wood = 0
+			
+			[if call_charaBirthday(demosam)]
+				"Birthday lumber? Well, that's practical! Thanks!"
+			[else]
+				"Good for building things. Or breaking things to see how they work. Thanks!"
+			[end]
+
+			[if var_tell_wood]
+				"This is a special example requested by Chionic! You can thank them later!"
+			[end]
+
+		**= card_templater
+			"A templater?! This is perfect! Do you realize how meta this is? A template item for the template character!"
+			
+			[if call_charaBirthday(demosam)]
+				"This might be the most thematically appropriate birthday gift ever. I love it!"
+			[end]
+
+		**= card_default
+			[if call_charaBirthday(demosam)]
+				"You get a default fallback reaction to a birthday gift! I love unknown variables. Thanks!"
+			[else]
+				"Thanks for the research material! This is my fallback reaction when I don't have anything special to say about the gift."
+			[end]
+	
+	* "Want help with your modding project?"
+		~ifd skill_creativity >= 20
+		~if mem_demosamUnlock == 0 && !mem_newShip
+		~set mem_demosamUnlock = 1
+
+		Sam looks up from [if mem_sam_he]his[else]her[end] holopalm with excitement. "You want to help? Great! I'm trying to create my first character mod!"
+
+		[if mem_sam_he]He[else]She[end] shows you the hologram. "I'm calling them 'Rubber' - they're a debug duck that's supposed to help players by giving hints about the game."
+
+		"The problem is, every time I try to add them to the map and talk to them, they just quack and disappear. I think I messed up my Exoscript somehow."
+
+		-
+		~set card = demorubber
+		~set love_demosam++
+		~set skill_creativity++
+
+		You spend some time helping Sam troubleshoot the code. Together, you manage to get Rubber to actually speak instead of just making duck noises.
+
+		"Success! My first functioning mod character!" Sam beams proudly. "Sure, Rubber still randomly turns into an actual duck sometimes, but that's just a... character flavor!"
+
+		-
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		You leave Sam happily tinkering with [if mem_sam_he]his[else]her[end] new mod.
+
+	
+	* "How's your mod going?"
+		~ifd skill_creativity >= 40
+		~if mem_demosamUnlock == 1 || mem_demosamUnlock == 0 && mem_newShip
+		~set mem_demosamUnlock = 2
+		~set card = templater
+
+		"Oh, you remembered!" Sam grins and pulls out what looks like a shimmering crystal. "I've been working on custom collectibles!"
+
+		"This is a 'Templater' - it's supposed to be a collectible to be used as a template for other collectibles. The tricky part was making sure it doesn't break the game's balance."
+
+		[if mem_sam_he]He[else]She[end] tosses it in the air and catches it. "I'd test it myself, but I don't have access to card battles, so I can't see how it works in practice. I need someone to help me test it out."
+
+		-
+		~set love_demosam++
+		~set skill_creativity++
+		~set card = templater
+
+		You help Sam fine-tune the Templater's effects, making sure it provides just enough benefit to be useful without being overpowered.
+
+		"Perfect! Now it seems to be perfectly balanced, thank you! You can have another one"
+
+		-
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		You leave Sam happily tinkering with the new addition to the mod.
+
+	* "Finished your new mod yet?"
+		~ifd skill_creativity >= 80
+		~if mem_demosamUnlock == 2
+		~set mem_demosamUnlock = 3
+
+		Sam's eyes light up as [if mem_sam_he]he[else]she[end] gestures to open a complex interface. "I've been working on something big - a complete total conversion mod!"
+
+		"Picture this: Instead of playing as [Name], you play as Dys! I call it 'I Was A Teenage Eco-Activist'! It's a completely different experience!"
+
+		-
+		The interface shows familiar locations but with some new UI elements. "You get to experience his journey fighting for the planet, his complex inner world, his romance options with you and Sym..."
+
+		"Oh! And I figured out how to make a proper three-way polyamory route work! Dys plus [Name] plus Sym, all together! Yay!"
+
+		-
+		~set love_demosam++
+		~set skill_creativity++
+		~set card = demototalconversion
+
+		You look at the screenshots Sam is showing you. The colony looks the same. The characters look the same. Even most of the events seem to be the same scenes you remember, just... from Dys's point of view.
+
+		** "Sam... this is just the same game"
+			~set midleft = demosam_angry
+
+			"What?! No it's not! It's completely different! You're playing as Dys!" Sam looks angry.
+
+			"Look, here's the part where Dys sneaks out of the colony for the first time - totally unique gameplay! And here's where he meets Sym in the forest for the first time - _naked_ - brand new content!"
+
+			*** "But all of that already happened..."
+				"Well... yes, but now you get to PLAY it! From his perspective! It's... it's a completely different experience!"
+
+				Sam pauses, looking a bit deflated. "Okay, maybe the events are similar... but the dialogue is all new! I wrote hundreds of lines of internal monologue for Dys!"
+
+				> leavemod
+
+			*** "The polyamory thing is pretty cool though"
+				~set midleft = demosam_happy
+				~set skill_empathy++
+				~set love_demosam++
+
+				"RIGHT?! That part is actually new! I had to completely rewrite some events to make it happen!"
+
+				"Sure, maybe the rest is... familiar... but that is a genuine innovation!"
+
+				> leavemod
+
+		** "Wow, so much work!"
+			~set midleft = demosam_happy
+			~set love_demosam++
+			~set skill_organization++
+
+			"Exactly! Do you know how much exoscript I had to rewrite to make everything work from Dys's POV? Every single event had to be adjusted!" Sam looks very proud of [if mem_sam_he]his[else]her[end] work.
+
+			"Plus I added new internal monologue trees and expanded his philosophical musings about nature and humanity's place in the ecosystem!"
+
+			*** "Very thorough"
+				"Thank you! I'm particularly proud of the new dialogue options, where Dys gets to actually flirt with Sym!" Sam beams at you. "And the new scenes where Sym shares new lore about Vertumna!"
+
+				> leavemod
+
+		**= leavemod
+			~set charas = none
+			~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+			Sam saves the project with satisfaction and leaves.
+			
+	* "Want to go on a date?"
+		~if mem_date_demosam
+		~if !story_date_demosam || story_date_demosam > 6
+		~if season != glow
+		~set mem_flirt_demosam // for the icon
+		~call preventSeenSkip
+		~call story(date_demosam)
+		
+	* "I think we should stop dating"
+		~if mem_date_demosam
+		~set midleft = demosam_angry
+	
+		"What? Ah... ok." Sam looks away, "I never thought you'd be serious with me anyway."
+		
+		** "Got you!"
+
+			"What?! You were joking? Ok, _player_, well played" Sam claps.
+			
+		** "I'm sorry"
+			~set !mem_date_demosam
+			
+			"It's alright, _player_, it's alright," it looks like Sam is back to not calling you by your name.
+	
+	* Done
+	
+
+
+
+/******************************************************************************** }*/
+/** Sam - High Priority ***********************************************************/
+/******************************************************************************** {*/
+
+=== demosamRebuilding ==============================================
+	~if chara = _high_demosam
+	~if mem_rebuilding
+	~if repeat
+	~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+	~set bg = destroyed
+	~set left = demosam
+
+	Sam kicks at some debris. "Well, this is what the 'destroyed colony' assets look like up close. Not as impressive as I thought they'd be."
+	
+	[if mem_sam_he]He[else]She[end] looks down and quickly adds, "Sorry, that was insensitive. This is all really terrible."
+
+
+
+=== demosamMourning ==============================================
+	~if chara = _high_demosam
+	// block any happier events while you're in mourning for something not caught above
+	~if status = mourning
+	~if repeat
+
+	[if mem_dead_dad && story_main_shimmerEnd <= 2]
+		Sam's usual energetic demeanor is notably subdued. "I'm sorry about your dad, [Name]. Even knowing this is all... you know... doesn't make it hurt less for you."
+		
+		[if mem_sam_he]He[else]She[end] fidgets uncomfortably. "I wish I could debug grief, but some things are beyond my permissions."
+		
+	[else if mem_dead_mom && story_main_starveDeath <= 4]
+		"Your mom was tough," Sam says quietly. "I always admired how she never let anyone push her around. The colony's going to feel different without her."
+		
+		[if mem_sam_he]He[else]She[end] looks down. "This just feels wrong, you know? Like we should have been able to do something."
+
+	[else]
+		Sam sits with you in uncharacteristic silence for a moment before speaking. "I'm not great at the comfort dialogue trees, but... I'm here if you need me, okay?"
+		
+	[end]
+	
+
+
+=== demosamIntro ==============================================
+	~if chara = high_demosam
+	// ~if age <= 13 // These are usually limited for Stratos kids, but debug friendship is good, so we keep it
+	~set midleft = demosam
+	
+	"Hey, you! You're finally awake!" Sam jumps up as you walk over to [if mem_sam_he]him[else]her[end].
+
+	[if mem_sam_he]He[else]She[end] leans closer to you. "You wanna see my _debug_ mode?"
+
+	* "Debug what?"
+		> debug
+	
+	* "Sure!"
+		> debug
+
+	* This is weird, get out
+		~set midleft = demosam_angry
+		"Are you sure-sure? Think again!"
+
+		** "Eh, ok..."
+			> debug
+
+		** "I am sure-sure."
+			"Whatever..."
+
+			-
+			~set midleft = none
+			~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true // We change Sam's gender flag, but in this scene Sam is still the previous gender, that's why mem check is reversed
+
+			And just like that [if !mem_sam_he]he[else]she[end] is gone.
+
+	*= debug
+		~set midleft = demosam_heppy
+
+		"Basically, so you do not have to run around each season gifting me and Hold stuffs, or trying to chose best dialogue options..." Sam starts explaining. "I've came up with a... 'DEBUG BONDING'"
+
+		-
+		~set love_demosam = 50
+		~set love_demohold = 50
+
+		"Now we're good friends! See you later!" Sam exclaims.
+
+		-
+		~set midleft = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true // We change Sam's gender flag, but in this scene Sam is still the previous gender, that's why mem check is reversed
+
+		And just like that [if !mem_sam_he]he[else]she[end] is gone.
+		
+
+
+=== demosamBffs ==============================================
+	~if chara = high_demosam
+	~if story_main_bffsStart < 2
+	~if mem_bff = null
+	~if repeat
+	~set midleft = demosam
+
+	[if first]
+		Sam is juggling what appears to be invisible objects, concentrating intensely.
+
+		"Almost got it... just need to sync the friendship variables properly..."
+
+		[if mem_sam_he]He[else]She[end] notices you watching. "Oh! Perfect timing! I was just optimizing relationship parameters!"
+	[else]
+		Sam waves as you approach. "Still thinking about that best friend algorithm I mentioned!"
+	[end]
+
+	* "Want to be best friends?"
+		~set mem_bff = demosam // Sam would always accept, no matter the choice
+		~set love_demosam++
+		~set midleft = demosam_happy
+
+		Sam does a little victory dance. "I've been hoping you'd ask! Having a best friend with narrative privileges is like a dream come true!"
+
+		> leave
+
+	* "We should be best friends for optimal efficiency."
+		~ifd skill_reasoning >= 10
+		~set mem_bff = demosam
+		~set love_demosam++
+		~set midleft = demosam_happy
+
+		"Exactly! You get it!" Sam does a little victory dance. "I've been hoping you'd ask! Having a best friend with narrative privileges is like a dream come true!"
+
+		> leave
+
+	* "I dream we're best friends forever."
+		~if hog_love_demosam
+		~set mem_bff = demosam
+		~set love_demosam++
+		~set mem_flirt_demosam
+		~set midleft = demosam_happy
+
+		"Ooh, prophetic dreams! I love the wormhole memories mechanic! That also suggests our friendship survives multiple timeline iterations!"
+
+		> leave
+
+	* "Actually, never mind."
+		Sam shrugs. "No worries! The friendship offer remains open if you change your mind. I'll just keep optimizing other relationships in the meantime."
+
+		> leave
+
+	*= leave
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+
+		You leave Sam to whatever [if mem_sam_he]he[else]she[end] was doing.
+
+
+
+=== demosamSecretAdmirer ==============================================
+	~if chara = high_demosam
+	~if mem_quest_secretAdmirer
+	~set bg = colony
+	~set midleft = demosam
+	
+	You find Sam tinkering with what looks like a small device, completely absorbed in [if mem_sam_he]his[else]her[end] work. [if mem_sam_he]He[else]She[end] looks up as you approach.
+
+	"Oh hey, [Name]! Perfect timing - I was just debugging this emotion simulation subroutine. It's been acting up lately."
+
+	_Someone_ gave you a databand. It might have been Sam...
+
+	* "Are you my secret admirer?"
+		~if mem_quest_secretAdmirer == demosam
+		~set mem_quest_secretAdmirer = false
+		~set midleft = demosam_angry
+
+		Sam's device makes a small beeping sound and [if mem_sam_he]he[else]she[end] quickly shuts it off, looking flustered.
+
+		"I... well... that depends on how you define 'secret' and also 'admirer' and technically the whole concept of-"
+
+		[if mem_sam_he]He[else]She[end] takes a breath. "Okay, yes. It was me. I may have exploited some minor system vulnerabilities to leave you that databand."
+
+		** "I like you too!"
+			~if !mem_custom_demosam_demohold_relationship
+			~if mem_relationship != monogamous
+			~set love_demosam++
+			~set mem_flirt_demosam
+			~set midleft = demosam_happy
+
+			"Really?! Oh wow, my confidence algorithms were totally off!" Sam practically bounces with excitement.
+
+			*** "Let's take things slow."
+				"Sure, no problem! I know you have _so many_ options for relationships!"
+
+				[if mem_sam_he]He[else]She[end] leans in closer, [if mem_sam_he]his[else]her[end] voice dropping to a conspiratorial whisper. "But just so you know, dating me does not set a monogamous flag!"
+
+				> admirer_response
+
+		** "I like you too!"
+			~if !mem_custom_demosam_demohold_relationship
+			~if mem_relationship == monogamous // I don't think this is possible, as you can technically only start dating Marz after secret admirer - and she's the first one available for dating, and even then her relationship flag is open, but this is just in case
+			~set love_demosam++
+			~set mem_flirt_demosam
+			~set midleft = demosam
+
+			"Really?! Oh, wow, but you are with [=call_whodate()]..." Sam looks conflicted for a moment, then smiles. "Let us discuss this some time later, okay? I don't want to cause any bugs in your current relationship."
+
+			> admirer_response
+
+		** "I like you too!"
+			~if mem_custom_demosam_demohold_relationship
+			~set love_demosam++
+			~set mem_flirt_demosam = true
+			~set midleft = demosam
+
+			"Oh... that's... wonderful, but also complicated." Sam glances around nervously. "I'm kind of in this weird accidental relationship situation with Hold right now, if you remember..."
+
+			[if mem_sam_he]He[else]She[end] fidgets with the device. "Could you give me some time to debug this whole emotional triangle thing? I promise I'll figure out the optimal solution!"
+
+			> admirer_response
+
+		** "Sorry, I don't feel the same way."
+			~set midleft = demosam
+
+			"Ah. Well, that's valuable data too, I suppose." Sam tries to smile. "Thanks for being honest about it. Better to know than to keep running faulty relationship algorithms."
+
+			> admirer_response
+
+		**= admirer_response
+			"Thanks for participating in my romantic subplot experiment, [Name]. The results were very... illuminating." Sam gathers [if mem_sam_he]his[else]her[end] things and leaves.
+
+			> leave
+
+	* "Are you my secret admirer?"
+		~if mem_quest_secretAdmirer != demosam
+		~set var_actual = call_nameFromMem(quest_secretAdmirer)
+		~set midleft = demosam
+
+		Sam tilts [if mem_sam_he]his[else]her[end] head, genuinely puzzled. "Secret admirer? Nope, that wasn't me."
+
+		[if mem_sam_he]He[else]She[end] looks curious. "[=var_actual] been sending you anonymous messages? Interesting social dynamics at play, hmm."
+
+		-
+
+		[if mem_met_sym]
+			"By the way, Sym has a special Easter egg interaction while you have the Secret Admirer questline, you can go and check it out," Sam giggles.
+		[else]
+			"I was expecting that it would be Dys this time around, he's so sneaky and secretive, it's like his trademark style, don't you think so?" 
+			
+			Sam looks towards colony gates where Dys is loading equipment into an Expeditions vehicle. [if var_actual != Dys]"But it looks like I was wrong!"[else]"And I was right, I'm still so happy I could predict that!"[end]
+		[end]
+
+		> leave
+
+	* Leave Sam alone for now
+		~set charas = none
+		// run again next time you talk to the chara, 'if first' will still be true, won't log story
+		~call keep
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		
+		You excuse yourself. You can always ask again later... if you have the guts.
+		
+	* This is pointless. I don't want to know.
+		// end secret admirer phase
+		~set mem_quest_secretAdmirer = false
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		
+		You shove the databand into your pocket and decide you have better things to do than track down who gave it to you.
+
+	*= leave
+		~set charas = none
+		~setif mem_sam_he ? mem_sam_he = false : mem_sam_he = true
+		
+		Well, you've clarified some things, at least.
+		
+
+
+
+/******************************************************************************** }*/
+/** Sam - Direct Calls ***********************************************************/
+/******************************************************************************** {*/
+
+=== date_demosam ==============================================
+	~if location = none
+	
+	~set bg = colony_quiet
+	~set left = demosam
+	
+	Sam grins and checks something on an invisible interface. "Date subroutine activated! I've got a few scenarios pre-loaded if you're interested."
+
+	* You experiment with reality glitches together
+		~if random
+		~set bg = fantasy_forest
+		~set left = demosam_happy
+		
+		Sam leads you to a quiet spot behind the engineering building. "Watch this!" [if mem_sam_he]He[else]She[end] concentrates hard and suddenly you're both in some fantasy looking forest.
+
+		-
+		~set effect = ending
+		~setif mem_sam_he ? midleft = demosam3_happy : midleft = demosam6_happy // here we just assume that Sam is on the latest adult sprite stage, can make it more cohesive with a bit more complicated logic, but eh? I like Sam's last art stages most
+		~set left = demosam_happy
+		"That's not all!" Sam concentrates once again and now there are two of [if mem_sam_he]him[else]her[end].
+		
+		"Temporal duplication glitch!" both Sams say in unison. "I can only hold it for a few minutes, but isn't it cool?"
+		
+		-
+		~set effect = none
+		~set midleft = none
+		~set skill_stress - 20
+		You spend time with both versions of Sam until the effect wears out, leaving you slightly dizzy but laughing.
+		
+	* You have a three-way date with Hold
+		~if random
+		~if mem_custom_demosam_demohold_relationship
+		~set bg = colony_dusk
+		~set left = demosam
+		~set right = demohold
+		~set speaker = demosam
+		
+		Sam bounces excitedly as Hold approaches. "Perfect! I set up a polyamorous date scenario. This should be interesting from a relationship mechanics standpoint!"
+		
+		-
+		~set speaker = demohold
+		
+		"[todo: express affection for both partners]" Hold nods.
+		
+		-
+		~set speaker = demosam
+		
+		"See? He's getting better at emotional expression!" Sam takes both your hands. "Group activities are surprisingly efficient for relationship maintenance."
+		
+		The three of you find a quiet spot to watch the sunset together, with Sam providing running commentary on the optimal positioning for maximum romantic impact.
+		
+		-
+		~set skill_stress - 20
+		~set speaker = demosam
+		
+		"I think we're getting really good at this whole relationship thing!" Sam beams.
+		
+
+

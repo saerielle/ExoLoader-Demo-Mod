@@ -1,0 +1,11 @@
+{
+  "ID": "special_templateEnding",
+  "Name": "Template's Ending",
+  "Preamble": "Yay! Template! (In normal endings, this is 'You reached your 20th birthday...')",
+  "Location": "",
+  "Character": "",
+  "RequiredJobs": [],
+  "OtherJobs": [],
+  "RequiredMemories": [],
+  "Skills": []
+}

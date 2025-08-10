@@ -1,0 +1,26 @@
+/******************************************************************************** }*/
+/** Old patches ***********************************************************/
+/******************************************************************************** {*/
+
+@replace|templateIntro|Template seems deep in thought|* Thanks!|0|0
+{
+	This Replaces a line.
+
+	* The text of this choice was replaced
+
+}
+
+@insert|artifactsBoss2Array|~set effect = screenShakeDream|0
+{
+			
+			Template part of the event.
+	
+			-
+}
+
+@insert|artifactsBoss2Array|Then a booming voice enters your brain|0
+{
+			Then a booming voice enters your brain and obliterates all else. This must be the thing the other presence fled, speaking more in abstract thought than words, but _loud_:
+}
+
+

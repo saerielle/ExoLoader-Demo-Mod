@@ -1,0 +1,227 @@
+/******************************************************************************** }*/
+/** Childhood Friend - Playing the game first time ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|gameStartIntro|** Shy and sweet Tammy|0
+{
+		** [Placeholder as a childhood friend]
+			~set mem_childfriend = demohold
+			~set mem_met_demohold
+			~set love_demohold + 5
+			~set skill_perception + 10
+			~set skill_empathy + 10
+			~set card = demohold1
+			~set card_hidden = physical1
+			
+			~set bg = creche
+			~set left = demohold
+			
+			[TODO: A compelling backstory for Placeholder]
+
+			"Yeah."
+			
+			*** Yeah, Hold!
+				> question6
+			
+			*** Wait, that's not right...
+				~set love_demohold - 5
+				~call decrementSkillWithBonuses(perception, -10)
+				~call decrementSkillWithBonuses(empathy, -10)
+				~call losecard(demohold1)
+				~call losecard(physical1)
+				~call clearchanges
+				
+				> question5
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Character Intro Sets ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|gameStartIntro|~call charafact(tammy, name)|0
+{
+	~call charafact(demohold, name)
+	~set love_demohold + 2
+}
+
+
+
+/******************************************************************************** }*/
+/** Childhood Friend - Playing the game second+ time ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|gameStartIntro|** Ship's Computer Congruence|0
+{
+		** [Placeholder as a childhood friend]
+			~set mem_childfriend = demohold
+			~set mem_met_demohold
+			~set love_demohold + 5
+			~set skill_perception + 5
+			~set skill_empathy + 5
+			~set card = demohold1
+			~set card_hidden = physical1
+			
+			~set bg = creche
+			~set left = demohold
+			
+			[TODO: A compelling backstory for Placeholder]
+
+			Hold often just stands in place, as if waiting for something to happen.
+
+			-
+
+			You have made up your mind, that today you will finally ask him about it. You see Hold standing in the corner of the room, looking at the wall with a blank expression.
+
+			When you approach him, he turns his head towards you, "Oh. You found me. Congrats. There's no reward."
+			
+			*** "Do you want to play a game"
+				~set skill_creativity + 5
+				~set love_demohold + 2
+
+				"No", Hold replies flatly and turns back to the wall.
+
+				Alright, that's Hold for you. Maybe today is _not_ the day.
+
+				> question6
+				
+			*** "What are you doing?"
+				~set skill_empathy + 5
+
+				"Waiting to be implemented," Hold replies and turns back to the wall, "Or replaced, whichever comes first."
+
+				You are not sure what to make of that, but that's Hold for you. Maybe today is _not_ the day.
+
+				> question6
+				
+			*** "Why do you always stand in the corner?"
+				~set skill_perception + 5
+				~set love_demohold + 2
+
+				Hold looks at you with a blank expression, "[todo: impelement some explanation]"
+
+				Alright, yeah, that makes total sense and you now understand Hold like never before.
+
+				> question6
+				
+			*** [out of ideas, come up with something later]
+				~set skill_organization + 5
+				~set love_demohold + 2
+				~set left = demoplaceholder_happy
+
+				Hold looks at you with a slight smile, "Thanks for noticing".
+				
+				> question6
+
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Birthday 16 (friend visit) ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|main_birthday16|* Someone knocking on the door|0
+{
+	* Someone is in your room
+		~if call_mostlove == demohold
+		~set skill_stress - 10
+		
+		~set midleft = demohold
+		
+		Hold stands in the middle of your room, whishing you happy birthday.
+		
+		>! balcony
+}
+
+
+
+/******************************************************************************** }*/
+/** Birthday 17 Dance ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|main_birthday17|** Think about Sym...|0
+{
+		** Option to dance with Hold
+				~if love_demohold >= 50 || mem_date_demohold
+				
+				~set mem_flirt_demohold
+				~set love_demohold++
+				~set midleft = demohold2_party
+				
+				[TODO: describe here why Hold looks so festive, he really likes his costume!]
+	
+				> continue
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Failed to locate Secret Admirer ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|main_secretAdmirer|* You overhear Cal on his hearspeak|0
+{
+	* Failed to locate Hold as a secret admirer
+			~if mem_quest_secretAdmirer == demohold
+			~set mem_quest_secretAdmirer == false
+			~set left = demohold
+			
+			TODO: not sure even how [Name] would get here, but alright, we'll need to describe here Hold's reaction to gifting [Name] databand and [Name] not figuring out it was Hold!
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Tammy's 100 Friendship ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|tammy10Ultimate|** Go talk to my mom!|0
+{
+		** Talk to Hold option
+			~if love_demohold >= 50
+			~if once
+			~set speaker = demohold
+			~set left = demohold
+			
+			TODO: describe something appropriate for Hold here.
+			
+			*** Option to be nice
+			
+				Hold nods, "You understand me."
+			
+				> continuedemohold
+			
+			*** Option to be nice but differently
+			
+				Hold shakes his head, "It's alright, I'm not bored, I promise."
+			
+				> continuedemohold
+			
+			***= continuedemohold
+			
+				You can see Sam playing with Echinacea, it looks like [if mem_sam_he]he[else]she[end]'s having fun. What do you do now?
+			
+				>> choose
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Vace's Jealousy (70 Friendship) ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|vace7Jealous|[elseif call_mostlove != vace]|0
+{
+		[elseif mem_flirt_demohold = true]
+			"You know, word gets around. People tell me how you act around Hold," he sneers. "[TODO: Vace's opinion of Hold goes here.]"
+		
+}
+
+

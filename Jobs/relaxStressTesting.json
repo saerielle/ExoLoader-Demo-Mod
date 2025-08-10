@@ -1,0 +1,17 @@
+{
+  "ID": "relaxStressTesting",
+  "Name": "Stress Testing",
+  "Location": "engineering",
+  "BattleHeaderText": "You are stress testing...",
+  "IsRelax": "TRUE",
+  "PrimarySkill": "creativity",
+  "PrimaryValue": "1",
+  "SecondSkill": "rebellion",
+  "SecondValue": "5",
+  "Kudos": "10",
+  "Stress": "-100",
+  "Characters": [
+    "demosam",
+    "demohold"
+  ]
+}

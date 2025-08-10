@@ -1,0 +1,23 @@
+/******************************************************************************** }*/
+/** Generic ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|expeditions|* Leave|0
+{
+	* Visit Template
+		~if mem_job_visitTemplate
+		~ifd status != stressed
+		~ifd season != wet
+		~call job(visitTemplate)
+
+}
+
+@insert|engineering|* Leave|0
+{
+	* Stress Test
+		~if mem_job_relaxStressTesting
+		~call job(relaxStressTesting)
+	
+}
+
+

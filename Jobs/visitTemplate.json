@@ -1,0 +1,19 @@
+{
+  "ID": "visitTemplate",
+  "Name": "Visiting Template",
+  "Location": "expeditions",
+  "BattleHeaderText": "Visiting Template",
+  "IsRelax": "FALSE",
+  "PrimarySkill": "reasoning",
+  "PrimaryValue": "6",
+  "SecondSkill": "empathy",
+  "SecondValue": "-2",
+  "Kudos": "0",
+  "Stress": "30",
+  "Characters": [
+    "demosam",
+    "demohold"
+  ],
+  "UltimateBonusSkill": "kudos",
+  "UltimateBonusValue": "25"
+}

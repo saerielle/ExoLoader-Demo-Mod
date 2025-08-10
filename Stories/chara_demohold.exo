@@ -1,0 +1,646 @@
+/******************************************************************************** }*/
+/** Hold ***********************************************************/
+/******************************************************************************** {*/
+
+=== demohold1Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 10
+
+	TODO: first friendship event
+
+	-
+	~set card = demohold1
+
+	TODO: this gives the first friendship card if Hold was not selected in the intro as childhood friend.
+
+
+=== demohold2Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 20
+
+	TODO: Second friendship event, nothing special here.
+
+
+=== demohold3Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 30
+
+	Third friendship event, nothing special here.
+
+
+=== demohold4Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 40
+
+	TODO: Fourth friendship event, nothing special here either.
+
+
+=== demohold5Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 50
+
+	TODO: something BIG happens here. Maybe.
+
+	-
+	~set card = demohold2
+
+	Or maybe it's just here to give 2nd reputation card, who knows.
+
+
+=== demohold6Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 60
+
+	TODO: You get the idea, right?
+
+	-
+	~call charafact(demohold, more)
+	But you also get to see more about Hold now in his character panel!
+
+
+=== demohold7Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 70
+
+	TODO: I think you do, these are not really good events, it's just a structure.
+
+
+=== demohold8Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 80
+
+	TODO: I nearly skipped this by accident.
+
+
+=== demohold9Friendship ==============================================
+	~if chara = demohold
+	~if love_demohold >= 90
+
+	How many are even there?!
+
+
+=== demohold10Ultimate ==============================================
+	~if chara = demohold
+	~if love_demohold >= 100
+
+	Hold looks you in the eyes, as you approach him.
+
+	-
+	~set midleft = demohold_happy
+	~set card = demohold3
+
+	"You are the best friend, [Name]."
+
+	You are not sure how it came to be, you don't really talk much to each other.
+
+
+
+/******************************************************************************** }*/
+/** Hold - High Priority ***********************************************************/
+/******************************************************************************** {*/
+
+=== demoholdRebuilding ==============================================
+	~if chara = _high_demohold
+	~if mem_rebuilding
+	~if repeat
+
+	~set bg = destroyed
+	~set left = demohold
+
+	FIXME: Add appropriate reaction to colony being destroyed.
+
+
+=== demoholdMourning ==============================================
+	~if chara = _high_demohold
+	// block any happier events while you're in mourning for something not caught above
+	~if status = mourning
+	~if repeat
+	
+	[if mem_dead_dad && story_main_shimmerEnd <= 2]
+		TODO: reaction to dad's death :(
+		
+	[else if mem_dead_mom && story_main_starveDeath <= 4]
+		TODO: Reaction to mom's death :(
+
+	[else]
+		TODO: Reaction to other deaths :(
+		
+	[end]
+
+
+=== demoholdIntro ==============================================
+	~if chara = high_demohold
+	// ~if age <= 13 // Since Hold's intro unlocks soooo many other things in this Demo mod, we allow it to be accesible at any point (it places Sam on the map, it unlocks both jobs)
+	
+	~set midleft = demohold
+	
+	You see someone standing still. Like... as if they are not alive. But as you come closer, you realise - it's just Hold, he's always like that.
+
+	* "Hey, are you ok?"
+		"...huh? Oh. Right. Sorry," Hold turns to look at you.
+
+		** "What are you doing out here?"
+			"Waiting to be replaced," Hold turns back to look at the horizon.
+
+			*** "Replaced? By whom?"
+				He still doesn't look at you, "By someone more interesting."
+
+				**** "That's bleak..."
+					~set love_demohold++
+
+					> unlocks
+
+				**** "Can I join you?"
+					~set love_demohold++
+
+					He nods.
+
+					> unlocks
+				**** "I think I'll go."
+
+					> unlocks
+
+				****= unlocks
+					~set mem_map_demosam = true
+					~set mem_job_visitTemplate = true
+
+					"[TODO: Hold explains all of this...]"
+
+					-
+					~set mem_job_relaxStressTesting = true
+
+					"[TODO: Hold explains more.]"
+
+	* Leave him be...
+		~set mem_map_demosam = true
+		~set mem_job_visitTemplate = true
+
+		...
+
+		** "Ok... Weird"
+			~set mem_job_relaxStressTesting = true
+
+			Hold didn't even notice you were there....
+
+
+=== demoholdBffs ==============================================
+	~if chara = high_demohold
+	~if story_main_bffsStart < 2
+	~if mem_bff = null
+	~if repeat
+
+	[if first]
+		TODO: First time interacting with Hold during BFF event
+	[else]
+		TODO: Already seen Hold during BFF event
+	[end]
+
+	* Option to become BFF because skilled
+		~ifd skill_perception >= 10
+		~set mem_bff = demohold
+		~set love_demohold++
+		
+		[TODO: skill check passed, friendship accepted]
+		
+	* Option to fail to become BFF
+		
+		Hold doesn't even look at you, "No."
+	
+	* "In my dreams, we are in love."
+		~if hog_love_demohold
+		~set mem_flirt_demohold = true
+		~set midleft = demohold_happy
+		
+		Hold looks at you, "TODO: emotional response is not coded"
+		
+		** "So, we are friends?"
+			~set mem_bff = demohold
+			~set love_demohold++
+			
+			Hold looks away, "Yes."
+		
+		** "On second thought..."
+
+			Hold looks away, "TODO: accept rejection gracefully."
+			
+	* On second thought...
+	
+		Yeah, Hold is probably not the best option for this.
+
+
+=== demoholdSecretAdmirer ==============================================
+	~if chara = high_demohold
+	~if mem_quest_secretAdmirer
+	
+	~set bg = engineering
+	~set left = demohold
+	
+	TODO: approach Hold to ask if he's your secret admirer.
+	
+	* "Are you my secret admirer?"
+		~if mem_quest_secretAdmirer == demohold
+		~set mem_quest_secretAdmirer = false
+		~set left = demohold_angry
+
+		"Yes," Hold replies, eloquent as always.
+		
+		** 'It's mutual' option
+			~set love_demohold++
+			~set mem_flirt_demohold
+			
+			TODO: complex emotional reaction, Hold runs away!
+				
+		** "I don't feel the same way"
+			
+			Hold looks away, "It's alright."
+			
+	* "Are you my secret admirer?"
+		~if mem_quest_secretAdmirer != demohold
+		
+		"No," Hold looks away.
+		
+	* Leave Hold alone for now
+		~set charas = none
+		// run again next time you talk to the chara, 'if first' will still be true, won't log story
+		~call keep
+		
+		You excuse yourself. You can always ask again later... if you have the guts.
+		
+	* This is pointless. I don't want to know.
+		// end secret admirer phase
+		~set mem_quest_secretAdmirer = false
+		~set charas = none
+		
+		You shove the databand into your pocket and decide you have better things to do than track down who gave it to you.
+		
+
+
+
+/******************************************************************************** }*/
+/** Hold - Low Priority ***********************************************************/
+/******************************************************************************** {*/
+
+=== demoholdRepeat ==============================================
+	~if chara = low_demohold
+	~if repeat
+
+	TODO: have a custom interaction depending on date, season, current events, etc.
+	
+	[if age == 10]
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if mem_dead_tammy && season == pollen]
+
+		[else if season == pollen]
+
+		[else if season == wet]
+
+		[end]
+		
+	[elseif age == 11]
+		
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if mem_shopUnlocked]
+
+		[else if season == pollen]
+
+		[end]
+		
+	[elseif age == 12]
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if season == wet]
+
+		[end]
+		
+	[elseif age == 13]
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if season == pollen]
+
+		[end]
+		
+	[elseif age == 14]
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else if mem_starve]
+
+		[else if mem_starve]
+
+		[else if mem_starve && season == pollen]
+
+		[else if mem_dead_mom]
+
+		[else]
+
+		[end]
+		
+	[elseif age == 15]
+		// New ship has arrived!
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[end]
+		
+	[elseif age == 16]
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if mem_date_demohold]
+
+		[else if season == dust]
+
+		[end]
+		
+	[elseif age == 17]
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if mem_date_demohold]
+
+		[else if mem_tammyPregnant]
+
+		[else if mem_tammyPregnant]
+
+		[end]
+		
+	[elseif age == 18]
+		// Tammy gives birth, mutiny is brewing
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else if !mem_dead_dys]
+
+		[else]
+
+		[else]
+
+		[else if mem_date_demohold]
+
+		[else if mem_tammyBaby]
+
+		[end]
+		
+	[elseif age == 19]
+	
+		[if random!]
+
+		[else]
+
+		[else]
+
+		[else]
+
+		[else if mem_wallGoBoom]
+
+		[else if mem_date_demohold]
+
+		[end]
+	
+	[else]
+		
+		// Default text here if none of the above conditions are met
+	[end]
+	
+	* Offer a gift
+		~if mem_foundCollectible
+		~ifd call_canGift(demohold)
+		~call preventSeenSkip
+		~call chooseGift(demohold)
+		
+		**= card_whiteFlower
+			TODO: Reaction to recieving special white flower
+
+		**= card_wood
+			
+			[if call_charaBirthday(demohold)]
+				TODO: liked gift; birthday reaction
+			[else]
+				TODO: liked gift; regular reaction
+			[end]
+    
+
+		**= card_templater
+
+			[if call_charaBirthday(demohold)]
+				TODO: liked gift; birthday reaction
+			[else]
+				TODO: liked gift; regular reaction
+			[end]
+    
+
+		**= card_crystal
+
+			[if call_charaBirthday(demohold)]
+				TODO: disliked gift; birthday reaction
+			[else]
+				TODO: disliked gift; regular reaction
+			[end]
+    
+
+		**= card_yellowFlower
+
+			[if call_charaBirthday(demohold)]
+				TODO: disliked gift; birthday reaction
+			[else]
+				TODO: disliked gift; regular reaction
+			[end]
+    
+
+		**= card_default
+
+			[if call_charaBirthday(demohold)]
+				TODO: generic gift fallback; birthday reaction
+			[else]
+				TODO: generic gift fallback; regular reaction
+			[end]
+	
+	* Skill interaction 20
+		~ifd skill_perception >= 20
+		~if mem_demoholdUnlock == 0 && !mem_newShip
+		~set mem_demoholdUnlock = 1
+
+		TODO: interaction with Hold on 20 perception.
+		
+		-
+		~set love_demohold++
+		~set skill_perception++
+		~set card = demoGear
+		
+		"TODO: Hold describes whatever he has gifted the player"
+		
+	* Skill interaction 40
+		~ifd skill_perception >= 40
+		~if mem_demoholdUnlock == 1 || mem_demoholdUnlock == 0 && mem_newShip
+		~set mem_demoholdUnlock = 2
+		
+		TODO: interaction with Hold on 40 perception.
+		
+		-
+		~set love_demohold++
+		~set skill_perception++
+		
+		"Nothing to see here," Hold looks away. "I am sorry."
+
+	* Skill interaction 80
+		~ifd skill_perception >= 80
+		~if mem_demoholdUnlock == 2
+		~set mem_demoholdUnlock = 3
+		
+		TODO: interaction with Hold on 80 perception.
+		
+		-
+		~set love_demohold++
+		~set skill_perception++
+		
+		"Nothing to see here," Hold looks away. "I am sorry."
+			
+	* Go on a date option
+		~if mem_date_demohold
+		~if !story_date_demohold || story_date_demohold > 6
+		~if season != glow
+		~set mem_flirt_demohold // for the icon
+		~call preventSeenSkip
+		~call story(date_demohold)
+		
+	* Stop dating option
+		~if mem_date_demohold
+	
+		TODO: describe Hold's reaction, that is - no reaction.
+		
+		** Option to continue dating
+		
+			"Sure," Hold nods.
+			
+		** Option to stop dating
+			~set !mem_date_demohold
+			
+			"You are smart," Hold nods.
+	
+	* Done
+
+
+
+/******************************************************************************** }*/
+/** Hold - Direct Calls ***********************************************************/
+/******************************************************************************** {*/
+
+=== date_demohold ==============================================
+	~if location = none
+	// date story is called directly from demoholdRepeat
+	
+	~set bg = colony
+	// ~set left = demohold_happy
+	~set left = demohold2_party // Hold's "secret" outfit :)
+	
+	"Let's go!" Hold looks more excited than usual.
+	
+	* Cool date one
+		~if random
+		~set bg = colony
+		~set left = demohold2_party
+		
+		Cool date.
+		
+		-
+		~set skill_stress - 20
+
+		Yep, very relaxing.
+		
+	* Cool date two
+		~if random
+		~set bg = colony
+		~set left = demohold2_party
+		
+		Cooler date.
+		
+		-
+		~set skill_stress - 20
+
+		Also, very relaxing.
+
+	* Cool date three
+		~if random
+		~set bg = colony
+		~set left = demohold2_party
+		
+		Even cooler date.
+		
+		-
+		~set skill_stress - 20
+
+		Still quite relaxing.
+
+	* Cool date four
+		~if random
+		~set bg = colony
+		~set left = demohold2_party
+		
+		This one is a bit kinky...
+		
+		-
+		~set skill_stress - 20
+
+		Did I tell you that Hold is asexual?
+
+
+

@@ -1,0 +1,23 @@
+{
+  "ID": "hobbyist",
+  "Modifications": {
+    "RequiredJobs": {
+      "Add": [],
+      "Remove": []
+    },
+    "OtherJobs": {
+      "Add": [
+        "relaxStressTesting"
+      ],
+      "Remove": []
+    },
+    "RequiredMemories": {
+      "Add": [],
+      "Remove": []
+    },
+    "Skills": {
+      "Add": [],
+      "Remove": []
+    }
+  }
+}

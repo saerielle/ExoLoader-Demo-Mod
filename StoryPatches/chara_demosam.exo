@@ -1,0 +1,244 @@
+/******************************************************************************** }*/
+/** Childhood Friend - Playing the game first time ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|gameStartIntro|** Shy and sweet Tammy|0
+{
+		** Enthusiastic and quirky Sam
+			~set mem_childfriend = demosam
+			~set mem_met_demosam
+			~set love_demosam + 5
+			~set skill_creativity + 10
+			~set skill_perception + 10
+			~set card = demosam1
+			~set card_hidden = social1
+			
+			~set bg = creche
+			~set left = demosam
+			
+			You always liked Sam... No, that's not right.
+
+			You always found Sam to be a bit of a weirdo, calling you _player_ and talking about things that made no sense. But somehow, Sam always understood you in a way no one else did.
+			
+			*** Yeah, Sam!
+				> question6
+			
+			*** Wait, that's not right...
+				~set love_demosam - 5
+				~call decrementSkillWithBonuses(creativity, -10)
+				~call decrementSkillWithBonuses(perception , -10)
+				~call losecard(demosam1)
+				~call losecard(social1)
+				~call clearchanges
+				
+				> question5
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Character Intro Sets ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|gameStartIntro|~call charafact(tammy, name)|0
+{
+	~call charafact(demosam, name)
+	~set love_demosam + 2
+}
+
+
+
+/******************************************************************************** }*/
+/** Childhood Friend - Playing the game second+ time ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|gameStartIntro|** Ship's Computer Congruence|0
+{
+		** Enthusiastic and quirky Sam
+			~set mem_childfriend = demosam
+			~set mem_met_demosam
+			~set mem_map_demosam = true // The only way to make Sam appear on the map at the start of the game, typically you have to talk to Placeholder first
+			~set love_demosam + 5
+			~set skill_perception + 5
+			~set skill_creativity + 5
+			~set card = demosam1
+			~set card_hidden = social1
+			
+			~set bg = creche
+			~set left = demosam
+			
+			You always liked Sam... No, that's not right.
+
+			You always found Sam to be a bit of a weirdo, calling you _player_ and talking about things that made no sense. But somehow, Sam always understood you in a way no one else did.
+			
+			-
+
+			Today Sam seems to be really excited about something, much more than usual.
+			
+			"_Finally_! The game finally begins! I have been waiting for this moment for so long, _player_! Pick an option!"
+			
+			*** "My name is [Name]!"
+				~set skill_toughness + 5
+				~set love_demosam + 2
+
+				"Oh, right..." Sam appears to be checking notes on her holopalm, "You picked [Name]!"
+
+				[if var_engineeringBooks]
+					"And I see you already played this game a few times, good choice with the Engineering Manuals! It's not just a way to prevent famine, but also a really good way to get a head start on the game!"
+				[else if mem_introBook = knight]
+					"And I see you have picked... 'Sir Knight and Princess Petticoats'?" Sam looks at you with a puzzled expression, "Really? I mean..."
+				[else if mem_introBook = superhero]
+					"And I see you have picked... 'Superhero Justice Warriors'?" Sam looks at you with a puzzled expression, "Really? I mean, I guess it's a good book..."
+				[else if mem_introBook = futuredog]
+					"And I see you have picked... 'Futuredog and the Space Cadets'?" Sam looks at you with a puzzled expression, "Really? I mean, I guess... Um..."
+				[else]
+					Sam looks at you with a puzzled expression, "I guess you really like Gardeners." Sam's voice drops to a whisper, "I like them too, but please... Let us keep them a secret for now, okay? I don't want to get in trouble with the adults again."
+				[end]
+
+				> question6
+				
+			*** "What do you mean, option?"
+				~set skill_reasoning + 5
+				~set love_demosam + 2
+
+				Sam shrugs. "You just did it, silly! Let us continue with the intro, shall we?"
+
+				> question6
+				
+			*** "Option"
+				~set skill_creativity + 5
+				~set love_demosam + 2
+				~set left = demosample_happy
+
+				Sam smiles brightly, "Yes! Option! This is a good option! Let us continue!"
+
+				> question6
+				
+			*** You are not in the mood for this
+				~set skill_persuasion + 5
+				~set love_demosam - 2
+				~set left = demosample_angry
+
+				Sam frowns, "Oh, I see... You are not in the mood for this. I understand, _player_."
+		
+				> question6
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Birthday 16 (friend visit) ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|main_birthday16|* Someone knocking on the door|0
+{
+	* Someone energetically knocking on your door
+		~if call_mostlove == demosam
+		~set skill_stress - 10
+		
+		~set midleft = demosam
+		
+		You open the door cautiusly. It's Sam!
+
+		"Happy birthday!" [if mem_sam_he]he[else]she[end] exlcaims. "Apparently, I'm your best friend in the colony! How is that even possible?"
+		
+		>! balcony
+}
+
+
+
+/******************************************************************************** }*/
+/** Birthday 17 Dance ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|main_birthday17|** Think about Sym...|0
+{
+		** Go to Sam
+				~if love_demosam >= 50 || mem_date_demosam
+				
+				~set mem_flirt_demosam
+				~set love_demosam++
+				~set midleft = demosam
+				
+				"You've got all those beautiful people around and you chose me? I'm pleased, but maybe I'm too tired to figure out how I would act in this scenario..." Sam trails off.
+
+				It looks like you are not going to get a dance with [if mem_sam_he]him[else]her[end] today.
+	
+				> continue
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Failed to locate Secret Admirer ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|main_secretAdmirer|* You overhear Cal on his hearspeak|0
+{
+	* You overhear Sam complaining to Hold
+			~if mem_quest_secretAdmirer == demosam
+			~set mem_quest_secretAdmirer == false
+			~set left = demosam_angry
+			
+			"All I wanted is to test out relationship systems! And [Name] acted like nothing has happened! Argh!"
+
+			You quickly change direction in which you were walking, it's better to not let angry Sam see you, not today.
+			
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Tammy's 100 Friendship ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|tammy10Ultimate|** Go talk to my mom!|0
+{
+		** Approach Sam
+			~if love_demosam >= 50
+			~if once
+			~set speaker = demosam
+			~set left = demosam
+			
+			When you approach Sam, [if mem_sam_he]he[else]she[end] looks up from [if mem_sam_he]his[else]her[end] holopalm and smiles to you.
+
+			"Tammy's max friendship event? Don't waste your time on me!"
+			
+			*** "I want to spend my time on you!"
+			
+				"Oooww, you're so sweet, aren't you? But there are no friendship increases in this event, it's all just flavor!"
+			
+				> continuedemosam
+			
+			*** "You're right, I'll go"
+			
+				>! continuedemosam
+			
+			***= continuedemosam
+			
+				You can see Hold with Echinacea, maybe his TODO's will distract the baby for a bit.
+
+				Where to next?
+			
+				>> choose
+				
+}
+
+
+
+/******************************************************************************** }*/
+/** Vace's Jealousy (70 Friendship) ***********************************************************/
+/******************************************************************************** {*/
+
+@insert|vace7Jealous|[elseif call_mostlove != vace]|0
+{
+		[elseif mem_flirt_demosam = true]
+			"You know, word gets around. People tell me how you act around Sam," he sneers. "[if mem_sam_he]He[else]She[end]'s not even a real character, what's wrong with you?!"
+		
+}
+
+

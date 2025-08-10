@@ -1,0 +1,93 @@
+/******************************************************************************** }*/
+/** Endings - Special ***********************************************************/
+/******************************************************************************** {*/
+
+=== ending_special_templateEnding ==============================================
+	~if location == none
+	
+	// preamble: Yay! Template! (In normal endings, this is 'You reached your 20th birthday...')
+	// title: Template's Ending
+	
+	Yay! This is a special Template Ending! Nothing interesting here.
+	// skips charas and ending_end straight to ending_oldsol
+
+
+
+/******************************************************************************** }*/
+/** Endings - Charas ***********************************************************/
+/******************************************************************************** {*/
+
+=== ending_chara_demosam ==============================================
+	~if location == none
+	~set bg = fantasy_forest
+	~set effect = ending
+	~set left = demosam1_normal
+	~set midright = demosam2_normal
+	~set right = demosam3_normal
+	~call delayText(1)
+
+	Ah, Sam... Sometimes a girl, sometimes a boy, always testing something.
+
+	[if mem_date_demosam]
+		You are happy together.
+	[end]
+	
+
+
+=== ending_chara_demotemplate ==============================================
+	~if location == none
+	~set bg = cave_array
+	~set effect = ending
+	~set midright = demotemplate_normal
+	~call delayText(1)
+
+	Template is still there, still waiting to have a proper mod dedicated to them.
+
+	It's alright, they can wait. They are nothing if not patient.
+	
+
+
+=== ending_chara_demohold ==============================================
+	~if location == none
+	~set bg = colony
+	~set effect = ending
+	~set left = demohold1_normal
+	~set midright = demohold2_normal
+	~set right = demohold3_normal
+	~call delayText(1)
+
+	FIXME: add good ending for Placeholder. He can be dating player, or he can be dating player and Sam, or he can be alone - either way, he'd be happy.
+
+	He still was not replaced.
+	
+
+
+
+/******************************************************************************** }*/
+/** Endings - Default ***********************************************************/
+/******************************************************************************** {*/
+
+=== ending_demoMaster ==============================================
+	~if location == none
+	
+	// preamble: You reached your 20th birthday...
+	// title: Master of Templates
+
+	You have become a Master of Templates!
+	
+  	* You are a loyal Master of Templates
+		~ifd skill_rebellion <= 50
+		
+		Yep!
+
+	* You are a rebellios one
+		~ifd skill_rebellion > 50
+		
+		And it's alright.
+
+	*= end
+	
+		It is not easy to get this one, because visiting Template takes a toll on your empathy levels, literally.
+
+
+
