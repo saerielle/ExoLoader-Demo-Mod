@@ -1,0 +1,198 @@
+{
+  "Data": {
+    "ID": "demotemplate",
+    "NAME": "Template",
+    "NICKNAME": "Template",
+    "GENDER": "X",
+    "LOVE": "TRUE",
+    "AGE10": "-1000",
+    "BIRTHDAY": "glow",
+    "DIALOGUECOLOR": "000000",
+    "DEFAULTBG": "cave_array",
+    "BASICS": "A character template.",
+    "MORE": "Made to make adding characters easier.",
+    "ENHANCEMENT": "No back pains",
+    "FILLBAR1LEFT": "Unfinished",
+    "FILLBAR1RIGHT": "Perfect",
+    "FILLBAR1CHILD": "0",
+    "FILLBAR1TEEN": "3",
+    "FILLBAR1ADULT": "6",
+    "FILLBAR2LEFT": "Uknowing",
+    "FILLBAR2RIGHT": "Knowing",
+    "FILLBAR2CHILD": "0",
+    "FILLBAR2TEEN": "0",
+    "FILLBAR2ADULT": "0",
+    "FILLBAR3LEFT": "Human",
+    "FILLBAR3RIGHT": "AI",
+    "FILLBAR3CHILD": "7",
+    "FILLBAR3TEEN": "7",
+    "FILLBAR3ADULT": "7"
+  },
+  "Ages": "FALSE",
+  "OnMap": "TRUE",
+  "Likes": [
+    "device",
+    "yellowFlower",
+    "templater"
+  ],
+  "Dislikes": [
+    "egg",
+    "cake"
+  ],
+  "Jobs": [],
+  "DataOverride": [
+    {
+      "Field": "FILLBAR2",
+      "Value": "mem_templateVisited"
+    }
+  ],
+  "CustomAging": [],
+  "HelioOnly": "FALSE",
+  "SpriteSize": "20",
+  "SpriteSizesByAge": [
+    "23",
+    "23",
+    "23"
+  ],
+  "OverworldScaleByAge": [
+    "4",
+    "4",
+    "4"
+  ],
+  "Skeleton": [
+    "sym",
+    "marz",
+    "tang",
+    "dys"
+  ],
+  "MainMenu": {
+    "Template": "sym",
+    "Position": [
+      "1.23",
+      "5.35"
+    ]
+  },
+  "DestroyedMapSpot": [
+    "42",
+    "6.9",
+    "3.1415"
+  ],
+  "PreHelioMapSpots": {},
+  "PostHelioMapSpots": {},
+  "NearbyStratoMapSpots": {
+    "quiet": [
+      "0",
+      "0",
+      "0"
+    ],
+    "pollen": [
+      "0",
+      "0",
+      "0"
+    ],
+    "dust": [
+      "0",
+      "0",
+      "0"
+    ],
+    "wet": [
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "NearbyHelioMapSpots": {
+    "quiet": [
+      "70",
+      "0",
+      "-112"
+    ],
+    "pollen": [
+      "70",
+      "0",
+      "-112"
+    ],
+    "dust": [
+      "70",
+      "0",
+      "-112"
+    ],
+    "wet": [
+      "70",
+      "0",
+      "-112"
+    ],
+    "glow": [
+      "70",
+      "0",
+      "-112"
+    ]
+  },
+  "PlainsMapSpots": {
+    "quiet": [
+      "0",
+      "0",
+      "0"
+    ],
+    "pollen": [
+      "0",
+      "0",
+      "0"
+    ],
+    "dust": [
+      "0",
+      "0",
+      "0"
+    ],
+    "wet": [
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "ValleyMapSpots": {
+    "quiet": [
+      "0",
+      "0",
+      "0"
+    ],
+    "pollen": [
+      "0",
+      "0",
+      "0"
+    ],
+    "dust": [
+      "0",
+      "0",
+      "0"
+    ],
+    "wet": [
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "RidgeMapSpots": {
+    "quiet": [
+      "0",
+      "0",
+      "-5"
+    ],
+    "pollen": [
+      "0",
+      "0",
+      "-5"
+    ],
+    "dust": [
+      "0",
+      "0",
+      "-5"
+    ],
+    "wet": [
+      "0",
+      "0",
+      "-5"
+    ]
+  },
+  "DefaultOnMap": "TRUE"
+}

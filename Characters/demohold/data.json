@@ -1,0 +1,129 @@
+{
+  "Data": {
+    "ID": "demohold",
+    "NAME": "Placeholder",
+    "NICKNAME": "Hold",
+    "GENDER": "M",
+    "LOVE": "TRUE",
+    "AGE10": "12",
+    "BIRTHDAY": "pollen-3",
+    "DIALOGUECOLOR": "a7dcdd",
+    "DEFAULTBG": "colony",
+    "BASICS": "A moody boy who's just holding this spot until someone better comes along.",
+    "MORE": "Occasionally glitches into [todo: placeholder text] when nervous as a side-effect of his genetic enhancement.",
+    "ENHANCEMENT": "Adaptible",
+    "FILLBAR1LEFT": "Temporary",
+    "FILLBAR1RIGHT": "Permanent",
+    "FILLBAR1CHILD": "0",
+    "FILLBAR1TEEN": "5",
+    "FILLBAR1ADULT": "8",
+    "FILLBAR2LEFT": "Draft",
+    "FILLBAR2RIGHT": "Final",
+    "FILLBAR2CHILD": "1",
+    "FILLBAR2TEEN": "2",
+    "FILLBAR2ADULT": "3",
+    "FILLBAR3LEFT": "Empty",
+    "FILLBAR3RIGHT": "Full",
+    "FILLBAR3CHILD": "5",
+    "FILLBAR3TEEN": "5",
+    "FILLBAR3ADULT": "5"
+  },
+  "Ages": "TRUE",
+  "OnMap": "TRUE",
+  "Likes": [
+    "wood"
+  ],
+  "Dislikes": [
+    "crystal",
+    "yellowFlower"
+  ],
+  "Jobs": [
+    "robotRepair"
+  ],
+  "DataOverride": [],
+  "CustomAging": [],
+  "HelioOnly": "FALSE",
+  "SpriteSizesByAge": [
+    "13",
+    "13",
+    "13",
+    "14"
+  ],
+  "OverworldScaleByAge": [
+    "3",
+    "3.5",
+    "4",
+    "5"
+  ],
+  "Skeleton": [
+    "tang",
+    "dys",
+    "anemone",
+    "sym"
+  ],
+  "DestroyedMapSpot": [
+    "3",
+    "0",
+    "3"
+  ],
+  "PreHelioMapSpots": {
+    "quiet": [
+      "37.12",
+      "3.83",
+      "-22.98"
+    ],
+    "pollen": [
+      "25.56",
+      "3.74",
+      "-27.31"
+    ],
+    "dust": [
+      "38.8",
+      "3.83",
+      "-23.56"
+    ],
+    "wet": [
+      "15.04",
+      "0.07",
+      "-11.72"
+    ],
+    "glow": [
+      "37.71",
+      "3.82",
+      "-24.39"
+    ]
+  },
+  "PostHelioMapSpots": {
+    "quiet": [
+      "-43.55",
+      "0.03",
+      "25.47"
+    ],
+    "pollen": [
+      "-38.67",
+      "0.4",
+      "17.86"
+    ],
+    "dust": [
+      "-51.31",
+      "3.41",
+      "-6.66"
+    ],
+    "wet": [
+      "35.16",
+      "0.85",
+      "9.37"
+    ],
+    "glow": [
+      "-54.07",
+      "3.23",
+      "5.35"
+    ]
+  },
+  "NearbyStratoMapSpots": {},
+  "NearbyHelioMapSpots": {},
+  "PlainsMapSpots": {},
+  "ValleyMapSpots": {},
+  "RidgeMapSpots": {},
+  "DefaultOnMap": "TRUE"
+}
