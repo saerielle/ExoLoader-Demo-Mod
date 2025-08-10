@@ -1,0 +1,27 @@
+{
+  "ID": "demohold3",
+  "Name": "Hold's Purpose III",
+  "Type": "memory",
+  "Level": "3",
+  "Suit": "social",
+  "Value": "4",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "allWildNumber",
+    "Value": "",
+    "Suit": "social"
+  },
+  "Ability2": {
+    "ID": "keep",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "gemsWild",
+    "Value": "",
+    "Suit": ""
+  },
+  "UpgradeFrom": "demohold2",
+  "ArtistName": "@ﾖﾛｲﾓｸﾞﾗ",
+  "ArtistSocialLink": "https://picrew.me/en/image_maker/2139284"
+}

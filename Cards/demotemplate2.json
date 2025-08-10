@@ -1,0 +1,26 @@
+{
+  "ID": "demotemplate2",
+  "Name": "Template's Insight II",
+  "Type": "memory",
+  "Level": "2",
+  "Suit": "mental",
+  "Value": "6",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "plusNeighbors",
+    "Value": "3",
+    "Suit": "mental"
+  },
+  "Ability2": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "UpgradeFrom": "template1",
+  "ArtistName": "Poayo_"
+}

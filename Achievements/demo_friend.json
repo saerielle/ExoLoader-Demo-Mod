@@ -1,0 +1,12 @@
+{
+  "ID": "demo_friend",
+  "Name": "Friend of Demo",
+  "Description": "Befriended Template, Placeholder and Sample",
+  "Hidden": "TRUE",
+  "LoveAll": [
+    "demotemplate",
+    "demosam",
+    "demohold"
+  ],
+  "RequiredCheevos": []
+}

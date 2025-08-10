@@ -1,0 +1,27 @@
+{
+  "ID": "demosam3",
+  "Name": "Sam's Test III",
+  "Type": "memory",
+  "Level": "3",
+  "Suit": "wild",
+  "Value": "5",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "wildNumber",
+    "Value": "",
+    "Suit": "none"
+  },
+  "Ability2": {
+    "ID": "plusAll",
+    "Value": "1",
+    "Suit": "wildcard"
+  },
+  "Ability3": {
+    "ID": "tripletsTripled",
+    "Value": "",
+    "Suit": "wildcard"
+  },
+  "UpgradeFrom": "demosam2",
+  "ArtistName": "マンドラゴラいずみ",
+  "ArtistSocialLink": "https://picrew.me/en/image_maker/2460239"
+}

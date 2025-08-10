@@ -1,0 +1,26 @@
+{
+  "ID": "demotemplate3",
+  "Name": "Template's Insight III",
+  "Type": "memory",
+  "Level": "3",
+  "Suit": "mental",
+  "Value": "6",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "plusAll",
+    "Value": "2",
+    "Suit": "mental"
+  },
+  "Ability2": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "UpgradeFrom": "template2",
+  "ArtistName": "Poayo_"
+}

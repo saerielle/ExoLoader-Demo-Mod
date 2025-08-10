@@ -1,0 +1,27 @@
+{
+  "ID": "demohold2",
+  "Name": "Hold's Purpose II",
+  "Type": "memory",
+  "Level": "2",
+  "Suit": "social",
+  "Value": "2",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "allWildNumber",
+    "Value": "",
+    "Suit": "social"
+  },
+  "Ability2": {
+    "ID": "keep",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "UpgradeFrom": "demohold1",
+  "ArtistName": "@ﾖﾛｲﾓｸﾞﾗ",
+  "ArtistSocialLink": "https://picrew.me/en/image_maker/2139284"
+}

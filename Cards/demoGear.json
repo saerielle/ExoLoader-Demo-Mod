@@ -1,0 +1,25 @@
+{
+  "ID": "demoGear",
+  "Name": "DEMOlition tool",
+  "Type": "gear",
+  "Level": "1",
+  "Suit": "none",
+  "Value": "0",
+  "HowGet": "shopDefault",
+  "Ability1": {
+    "ID": "gearAllSkills",
+    "Value": "5",
+    "Suit": "none"
+  },
+  "Ability2": {
+    "ID": "multiplyKudos",
+    "Value": "50",
+    "Suit": "none"
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Kudos": "1"
+}

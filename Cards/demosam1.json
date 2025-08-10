@@ -1,0 +1,26 @@
+{
+  "ID": "demosam1",
+  "Name": "Sam's Test I",
+  "Type": "memory",
+  "Level": "1",
+  "Suit": "wild",
+  "Value": "1",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "wildNumber",
+    "Value": "",
+    "Suit": "none"
+  },
+  "Ability2": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "ArtistName": "マンドラゴラいずみ",
+  "ArtistSocialLink": "https://picrew.me/en/image_maker/2460239"
+}

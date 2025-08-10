@@ -1,0 +1,26 @@
+{
+  "ID": "demohold1",
+  "Name": "Hold's Purpose I",
+  "Type": "memory",
+  "Level": "1",
+  "Suit": "social",
+  "Value": "0",
+  "HowGet": "unique",
+  "Ability1": {
+    "ID": "allWildNumber",
+    "Value": "",
+    "Suit": "social"
+  },
+  "Ability2": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "ArtistName": "@ﾖﾛｲﾓｸﾞﾗ",
+  "ArtistSocialLink": "https://picrew.me/en/image_maker/2139284"
+}

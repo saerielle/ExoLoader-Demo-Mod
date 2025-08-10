@@ -1,0 +1,24 @@
+{
+  "ID": "demorubber",
+  "Name": "Rubber",
+  "Type": "memory",
+  "Level": "1",
+  "Suit": "social",
+  "Value": "3",
+  "HowGet": "none",
+  "Ability1": {
+    "ID": "gem",
+    "Value": "0",
+    "Suit": "none"
+  },
+  "Ability2": {
+    "ID": "plusWinSkill",
+    "Value": "1",
+    "Suit": "social"
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  }
+}
