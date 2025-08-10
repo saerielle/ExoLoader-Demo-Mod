@@ -32,7 +32,7 @@ Very experimental character that utilizes a lot of features of the loader. Very 
 
 **Features**
 - Some story events with Sam swap Sam's gender between male and female (configuration changes overworld sprite, story sprites, dialogue color, pronouns in the character info, etc.)
-- Sam has custom aging setup that makes her/him age at the same in-game time as other characters, but similar mechanics can be used to have characters whose art stages do not match the game's base logic
+- Sam has custom aging setup that makes her/him age at the same in-game time as other characters with addition of 2nd gendered appearance, but similar mechanics can be used to have characters whose art stages do not match the game's base logic
 - Is not present on the map during Glow for the first half of the game
 - Does not appear on the map by default until a memory flag `mem_map_demosam` is set - same as base game's characters (ExoLoader shows custom characters on map by default otherwise) - this memory flag is set in either intro story when choosing Sam as a childhood friend or in Hold's introduction story
 - Showcases a custom dating flag between two characters (sets in Sam's 60 friendship event)
