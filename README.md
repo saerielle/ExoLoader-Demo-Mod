@@ -49,6 +49,9 @@ This demo also has examples of custom achievements, backgrounds, endings, cards,
 
 If you are interested in how any specific thing can be implemented using ExoLoader, feel free to reach out to me and I may add an example of that to this Demo :)
 
+## Why no Helios?
+There is already a well-tested fully fledged mod that implements two Helios characters that can be used as good example: [Gestalt Expansion](https://www.nexusmods.com/iwasateenageexocolonist/mods/4)
+
 ## Credits
 - Template's art by [Poayo_](https://www.instagram.com/poayo/)
 - Placeholder's art made via [Yomo Doll Maker](https://picrew.me/en/image_maker/2139284)
