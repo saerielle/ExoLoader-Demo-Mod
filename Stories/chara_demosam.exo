@@ -83,7 +83,7 @@
 	~if love_demosam >= 20
 	~set midleft = demosam
 
-	Sam waves enthusiastically as you approach. "Player! Perfect timing! I've been working on something special for you."
+	Sam waves enthusiastically as you approach. "Player! You are just in time! I've been working on something special..."
 
 	[if mem_sam_he]He[else]She[end] reaches into [if mem_sam_he]his[else]her[end] pocket and pulls out a delicate white flower.
 
@@ -96,7 +96,7 @@
 		~set love_demosam++
 		~set midleft = demosam_happy
 
-		"Isn't it? I had to do some serious data mining to find where these spawn. The devs really hid them well!"
+		"Isn't it? I had to do some very serious data mining to find where these spawn!"
 
 		[if age < 12]
 			You've never seen a flower quite like this before. It's so perfectly white and delicate.
@@ -107,7 +107,7 @@
 		> continue
 
 	* "Where did you get this?"
-		Sam grins mischievously. "Trade secret! Let's just say I may have found a way to access some... restricted asset folders."
+		Sam grins mischievously. "It's a secret! Let's just say I may have found a way to access some... restricted asset folders."
 
 		[if age < 12]
 			You take the strange flower, admiring its star-shaped petals. You've never seen anything like it.
@@ -120,11 +120,11 @@
 	*= continue
 		~set midleft = demosam
 
-		"Consider it a friendship token! Plus, I wanted to test the gifting system mechanics."
+		"Consider it a friendship token! Plus, I wanted to test out the gifting system."
 
 		When you look at [if mem_sam_he]him[else]her[end] curiously, Sam explains, "You know, how you can go around gifting people items? I wanted to see if it works in reverse!"
 
-		[if mem_sam_he]He[else]She[end] winks. "Gotta min-max these social interactions, you know?"
+		[if mem_sam_he]He[else]She[end] winks. "Gotta min-max these friendship meters, you know?"
 
 		-
 		~set midleft = none
@@ -148,10 +148,10 @@
 	* "Sure!"
 		> effects
 
-	* "Should I be worried?"
+	* "This does not sound safe..."
 		> effects
 
-	* "Not today."
+	* "Not today"
 		~call keep
 
 		Maybe you'll return later to see these _effects_.
@@ -159,7 +159,7 @@
 	*= effects
 		~set midleft = demosam_happy
 
-		"Great! Let me demonstrate the holopalm effect first..."
+		"Don't worry! Let me demonstrate the holopalm effect first..."
 
 		-
 		~set effect = holopalm
@@ -192,7 +192,7 @@
 		~set effect = fire
 		~set midleft = demosam_angry
 
-		"This one..." Sam's expression darkens. "I don't like this one. It makes me think of bad endings."
+		"This one..." Sam's smile fades. "I don't like this one. It makes me think of bad endings."
 
 		-
 		~set effect = night
@@ -255,7 +255,7 @@
 			> gone
 
 	*= gone
-		Sam stretches and yawns. "I think that's enough experimentation for one day. See you later, Player!"
+		Sam stretches and yawns. "I think that's enough for one day. See you later, Player!"
 
 		-
 		~set midleft = none
@@ -290,7 +290,7 @@
 	*= project
 		~set midleft = demosam_happy
 
-		"I'm trying to optimize conversation trees! You know how sometimes people say things that don't quite fit the situation? I'm working on a patch!"
+		"I'm trying to optimize conversation trees! You know how sometimes people say things that don't quite...um, fit the situation? I'm working on a story patch!"
 
 		Sam opens the holoscreen again, showing what looks like a complex flowchart.
 
@@ -321,7 +321,7 @@
 
 		Sam saves [if mem_sam_he]his[else]her[end] work and closes the holoscreen. 
 
-		"Sorry, sometimes I get so caught up in the code that I forget about the human element. On that note... I have something funny to show you!"
+		"Sorry, sometimes I just get so caught up in the code! On that note... I have something funny to show you!"
 
 		** "What?"
 			~set mem_flirt_demosam
@@ -443,16 +443,16 @@
 	-
 	~set speaker = demohold
 
-	Hold stares down at [if mem_sam_he]him[else]her[end]. "You've been staring at me for five minutes."
+	Hold stares down at [if mem_sam_he]him[else]her[end]. "You've been staring at me for like five minutes already."
 
 	-
 	~set speaker = demosam
 
 	Sam fidgets nervously. "It's for science! I think!"
 
-	You're not sure what's going on here, but it seems like Sam is up to something experimental again.
+	You're not sure what's going on between these two, but it seems like Sam is up to some _testing_ again.
 
-	* "Sam? What's going on?"
+	* "Sam? What is going on?"
 		> intervene
 
 	* Leave them be and walk away
@@ -585,9 +585,9 @@
 	
 	Sam approaches you with an unusually serious expression. "Hey, [Name]. Remember that... situation with Hold and the romance flag?"
 	
-	[if mem_sam_he]He[else]She[end] runs a hand through [if mem_sam_he]his[else]her[end] hair. "Well, it's been a few weeks now, and I'm not sure what to do about it."
+	[if mem_sam_he]He[else]She[end] runs a hand through [if mem_sam_he]his[else]her[end] hair. "Well, it's been some time already since that happened, and I'm really not sure what to do about it."
 
-	* "How are things going with you two?"
+	* "How are things going between you two?"
 		~set love_demosam++
 		> status
 
@@ -597,9 +597,9 @@
 	*= status
 		~set midleft = demosam_happy
 
-		"That's the thing - it's actually been... nice? Hold's really sweet once you get past all the placeholder text. But I keep feeling like I'm living in someone else's story, you know?"
+		"That's the thing - it's actually been... nice? Hold's really sweet once you get past all the placeholder text. But you know, I feel like I'm living in someone else's story."
 
-		Sam looks thoughtful. "Plus, I can't shake the feeling that this whole thing is supposed to involve you somehow. The narrative structure just feels _incomplete_."
+		Sam ponders for a moment. "On top of that, I keep feeling like this whole thing is supposed to involve you somehow. The narrative structure just feels _incomplete_."
 
 		** "What do you mean?"
 			> options
@@ -631,7 +631,7 @@
 		-
 		~set speaker = demosam
 
-		Sam turns to you. "See? This is what I mean. I think we need a third party to help us figure this out. What do you think we should do?"
+		Sam turns to you. "See? This is what I mean! I think we need someone to help us figure this out. What do you think we should do?"
 
 		** "You two seem happy together. Keep things as they are"
 			~set midleft = demosam_happy
@@ -693,7 +693,7 @@
 				~set mem_custom_demosam_demohold_relationship = false
 				~set midleft = demosam
 
-				Sam sighs. "I guess you're right. Back to the drawing board."
+				Sam sighs. "I guess you're right.... Back to single status for me!"
 
 				-
 				~set right = demohold
@@ -714,7 +714,7 @@
 			~set midleft = demosam_happy
 			~set mem_flirt_demosam
 
-			"Oh! That's... actually really direct. I like that in a protagonist." Sam giggles nervously. "I mean, I guess I was hoping you'd say that, [Name]."
+			"Oh! That's... actually really direct. I like that in a protagonist." Sam giggles nervously. "I mean... I was hoping you'd say that, [Name]!"
 
 			-
 			~set mem_custom_demosam_demohold_relationship = false
@@ -732,7 +732,7 @@
 			~set midleft = demosam_angry
 			~set mem_flirt_demohold
 
-			"Ah. Well, that's... unexpected plot development." Sam tries to smile. "I guess I should have seen that coming."
+			"Ah. Well, that's... unexpected plot development." Sam tries to smile. "I should have seen that coming."
 
 			-
 			~set right = demohold_happy
@@ -764,14 +764,14 @@
 	*= ending_breakup
 		~set speaker = demosam
 
-		"Well, that's one way to resolve a plot thread. Thanks for the honesty, [Name]."
+		"Well, that's one way to resolve a plot thread. Thanks for the honesty, [Name]!"
 
 		> final_exit
 
 	*= ending_player_sam
 		~set speaker = demosam
 
-		"I have to admit, I was hoping this might happen. Thanks for choosing me, [Name]."
+		"I really was hoping this might happen. Thanks for choosing me, [Name]!"
 
 		> final_exit
 
@@ -1016,7 +1016,7 @@
 
 		Sam looks up from [if mem_sam_he]his[else]her[end] holopalm with excitement. "You want to help? Great! I'm trying to create my first character mod!"
 
-		[if mem_sam_he]He[else]She[end] shows you the hologram. "I'm calling them 'Rubber' - they're a debug duck that's supposed to help players by giving hints about the game."
+		[if mem_sam_he]He[else]She[end] shows you the hologram. "I call them 'Rubber'. They're a debug duck that's supposed to help players by giving hints and whatnot."
 
 		"The problem is, every time I try to add them to the map and talk to them, they just quack and disappear. I think I messed up my Exoscript somehow."
 
@@ -1044,9 +1044,9 @@
 
 		"Oh, you remembered!" Sam grins and pulls out what looks like a shimmering crystal. "I've been working on custom collectibles!"
 
-		"This is a 'Templater' - it's supposed to be a collectible to be used as a template for other collectibles. The tricky part was making sure it doesn't break the game's balance."
+		"This is a 'Templater'. It's supposed to be a collectible to be used as a template for other collectibles. But I have no clue if it breaks game balance or anything like that."
 
-		[if mem_sam_he]He[else]She[end] tosses it in the air and catches it. "I'd test it myself, but I don't have access to card battles, so I can't see how it works in practice. I need someone to help me test it out."
+		[if mem_sam_he]He[else]She[end] tosses it in the air and catches it. "I can't test it myself, as I don't have access to card battles, so... I need someone to help me test it out."
 
 		-
 		~set love_demosam++
