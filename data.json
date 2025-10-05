@@ -1,0 +1,12 @@
+{
+    "name": "Demo",
+    "description": "Demo mod for ExoLoader to showcase different features.",
+    "version": "1",
+    "introCredits": [
+        "This is how to add extra information and/or credits to the game's intro",
+	"Supports _exoscript_ things here!"
+    ],
+    "gameCredits": [
+        "Nickname|Role\n@discord or twitter or whatnot handle\nCan have new lines and urls\n<link=\"https://github.com/Pandemonium14/ExoLoader/\">ExoLoader</link>"
+    ]
+}
