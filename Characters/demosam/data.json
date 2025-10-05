@@ -3,6 +3,7 @@
     "ID": "demosam",
     "NAME": "Sample",
     "NICKNAME": "Sam",
+    "NICKNAME_MEMORY": "samNick",
     "GENDER": "F",
     "LOVE": "TRUE",
     "AGE10": "11",
@@ -174,5 +175,6 @@
   "PlainsMapSpots": {},
   "ValleyMapSpots": {},
   "RidgeMapSpots": {},
-  "DefaultOnMap": "FALSE"
+  "DefaultOnMap": "FALSE",
+  "SecretAdmirerType": "poly"
 }
