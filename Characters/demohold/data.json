@@ -125,5 +125,6 @@
   "PlainsMapSpots": {},
   "ValleyMapSpots": {},
   "RidgeMapSpots": {},
-  "DefaultOnMap": "TRUE"
+  "DefaultOnMap": "TRUE",
+  "SecretAdmirerType": "poly"
 }

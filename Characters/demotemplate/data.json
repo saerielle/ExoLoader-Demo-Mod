@@ -194,5 +194,6 @@
       "-5"
     ]
   },
-  "DefaultOnMap": "TRUE"
+  "DefaultOnMap": "TRUE",
+  "SecretAdmirerType": "never"
 }

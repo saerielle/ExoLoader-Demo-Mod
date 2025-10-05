@@ -1,0 +1,23 @@
+{
+  "ID": "templateling",
+  "Name": "Templateling",
+  "Level": "1",
+  "HowGet": "none",
+  "ArtistName": "Poayo_",
+  "Ability1": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability2": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Ability3": {
+    "ID": "",
+    "Value": "",
+    "Suit": ""
+  },
+  "Animation": "waving"
+}
